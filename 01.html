@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estudos de Futuros — Unidade de Aprendizagem</title>
+  <meta name="description"
+    content="Unidade 1 — Introdução aos Estudos de Futuros: origens do campo, futuros plurais, o Cone de Futuros e o caso Shell.">
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='38' fill='none' stroke='%232b6e63' stroke-width='7'/%3E%3Cpath d='M50 20 L50 50 L68 62' fill='none' stroke='%232b6e63' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+
+  <button class="nav-toggle" id="navToggle" aria-label="Abrir navegação" aria-expanded="false" aria-controls="sidebar">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-backdrop" id="navBackdrop"></div>
+
+  <div class="layout">
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-inner">
+        <div class="brand-logo">
+          <img src="img/logo-unifap.svg" alt="Logotipo UNIFAP" width="132" height="33" loading="eager">
+        </div>
+
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 100 100" width="26" height="26">
+              <circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="7" />
+              <path d="M50 20 L50 50 L68 62" fill="none" stroke="currentColor" stroke-width="7"
+                stroke-linecap="round" />
+            </svg>
+          </span>
+          <div class="brand-text">
+            <span class="brand-title">Estudos de Futuros</span>
+            <span class="brand-subtitle">Unidade 1 · Introdução</span>
+          </div>
+        </div>
+
+        <button class="sidebar-collapse" id="sidebarCollapse" aria-label="Recolher menu" aria-expanded="true" aria-controls="sidebar">
+          <svg class="collapse-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+          <span class="sidebar-collapse-label">Recolher menu</span>
+        </button>
+
+        <nav class="toc" aria-label="Sumário da unidade">
+          <ol id="tocList">
+            <li><a href="#o-que-sao" data-index="01"><span class="toc-index">01</span><span
+                  class="toc-label">O que são Estudos de Futuros</span></a></li>
+            <li><a href="#historico" data-index="02"><span class="toc-index">02</span><span
+                  class="toc-label">Breve Histórico do Campo</span></a></li>
+            <li><a href="#por-que-gestores" data-index="03"><span class="toc-index">03</span><span
+                  class="toc-label">Por que Estudar Futuros</span></a></li>
+            <li><a href="#futuros-plurais" data-index="04"><span class="toc-index">04</span><span
+                  class="toc-label">A Lógica dos Futuros Plurais</span></a></li>
+            <li><a href="#cone-de-futuros" data-index="05"><span class="toc-index">05</span><span
+                  class="toc-label">O Cone de Futuros</span></a></li>
+            <li><a href="#planejamento-estrategico" data-index="06"><span class="toc-index">06</span><span
+                  class="toc-label">Futuros x Planejamento Estratégico</span></a></li>
+            <li><a href="#ferramentas" data-index="07"><span class="toc-index">07</span><span
+                  class="toc-label">Panorama das Ferramentas</span></a></li>
+            <li><a href="#aplicacoes-praticas" data-index="08"><span class="toc-index">08</span><span
+                  class="toc-label">Aplicações e o Caso Shell</span></a></li>
+            <li><a href="#video-futuros-possiveis" data-index="09"><span class="toc-index">09</span><span
+                  class="toc-label">Vídeo: Futuros nas Empresas</span></a></li>
+            <li><a href="#questoes-fixacao" data-index="10"><span class="toc-index">10</span><span
+                  class="toc-label">Questões de Fixação</span></a></li>
+            <li><a href="#referencias" data-index="11"><span class="toc-index">11</span><span
+                  class="toc-label">Referências Consultadas</span></a></li>
+          </ol>
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="user-card">
+            <img class="user-avatar" src="https://avatars.githubusercontent.com/u/4398869" alt="Foto de Ermeson Silva" width="36" height="36" loading="lazy">
+            <div class="user-info">
+              <span class="user-name">Ermeson Silva</span>
+              <span class="user-role">Professor</span>
+            </div>
+          </div>
+
+          <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema claro/escuro">
+            <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round">
+              <circle cx="12" cy="12" r="4" />
+              <path
+                d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+            </svg>
+            <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round">
+              <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z" />
+            </svg>
+            <span class="theme-toggle-label">Tema</span>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="content" id="content">
+
+      <div class="hero-banner">
+        <div class="hero-banner-media" aria-hidden="true"></div>
+        <div class="hero-banner-overlay" aria-hidden="true"></div>
+        <div class="hero-banner-text">
+          <p class="hero-banner-kicker">Unidade de Aprendizagem 1</p>
+          <h2 class="hero-banner-title">Introdução aos Estudos de Futuros</h2>
+        </div>
+      </div>
+
+      <header class="hero">
+        <p class="hero-kicker">Curso de Administração · Disciplina Estudos de Futuros</p>
+        <h1>Pensar o futuro para agir no presente</h1>
+        <p class="hero-lede">Todo gestor toma decisões olhando, ao mesmo tempo, para dois lugares: o presente, onde
+          estão os dados e os problemas concretos, e o futuro, que é a razão de ser de qualquer decisão. Os Estudos
+          de Futuros (<em>Futures Studies</em>) nasceram para preencher a lacuna que a formação em Administração
+          costuma deixar em aberto: a capacidade de pensar sobre múltiplos futuros possíveis para decidir melhor
+          hoje.</p>
+        <p class="hero-hint">Use o menu ao lado para navegar entre as seções. O conteúdo acompanha a rolagem da
+          página.</p>
+      </header>
+
+      <section class="unit-section" id="o-que-sao" aria-labelledby="o-que-sao-title">
+        <p class="section-eyebrow">01 — Fundamentos</p>
+        <h2 id="o-que-sao-title">O que são Estudos de Futuros</h2>
+
+        <p>Estudos de Futuros é o campo interdisciplinar dedicado à investigação sistemática de futuros possíveis,
+          prováveis e preferíveis, com o objetivo de qualificar a tomada de decisão no presente. Trata-se de um termo
+          guarda-chuva para estudos que analisam tendências buscando antecipar eventos ou contextos prováveis,
+          possíveis ou preferíveis — sem pretender prever o futuro com exatidão, mas sim compreender o que
+          provavelmente vai continuar e o que pode mudar de forma plausível.</p>
+
+        <p>É importante marcar bem essa fronteira desde o início: Estudos de Futuros <strong>não é</strong> previsão.
+          Previsão pressupõe que existe um único resultado correto a ser descoberto, como se o futuro já estivesse
+          escrito e bastasse ter os dados certos para lê-lo. Os Estudos de Futuros partem do princípio oposto: o
+          futuro é aberto, indeterminado e construído por decisões humanas — o que significa que ele não pode ser
+          previsto com certeza, mas pode ser explorado, mapeado e, em alguma medida, influenciado.</p>
+
+        <blockquote>Em vez de perguntar "o que vai acontecer?", o profissional formado em Estudos de Futuros pergunta
+          "quais futuros são possíveis, o que os tornaria mais ou menos prováveis, e qual deles eu prefiro
+          construir?"</blockquote>
+
+        <h3>Objetivos de aprendizagem desta unidade</h3>
+        <ul>
+          <li>Definir o que são Estudos de Futuros e diferenciá-los de previsão, adivinhação e futurologia
+            especulativa.</li>
+          <li>Reconhecer a origem histórica do campo e identificar seus principais marcos institucionais.</li>
+          <li>Compreender a lógica dos futuros plurais e explicar por que não existe um único futuro previsível.</li>
+          <li>Aplicar o modelo do Cone de Futuros para classificar diferentes tipos de futuro (provável, plausível,
+            possível e preferível).</li>
+          <li>Reconhecer aplicações práticas dos Estudos de Futuros na tomada de decisão empresarial, a partir de um
+            caso real.</li>
+        </ul>
+
+        <p class="reading-more">Saiba mais: <a href="https://pt.wikipedia.org/wiki/Futurologia" target="_blank"
+            rel="noopener">Futurologia (Wikipédia)</a> · <a
+            href="https://fastcompanybrasil.com/5-perguntas/5-perguntas-para-peter-bishop-futurista-e-fundador-do-teach-the-future/"
+            target="_blank" rel="noopener">5 perguntas para Peter Bishop, futurista</a></p>
+      </section>
+
+      <section class="unit-section" id="historico" aria-labelledby="historico-title">
+        <p class="section-eyebrow">02 — Contexto Histórico</p>
+        <h2 id="historico-title">Breve Histórico do Campo</h2>
+
+        <p>Os Estudos de Futuros, como campo estruturado, nasceram no período pós-Segunda Guerra Mundial, quando
+          governos e organizações passaram a sentir necessidade de métodos mais rigorosos para lidar com a incerteza
+          estratégica — sobretudo no contexto da Guerra Fria. Três frentes se destacam nesse nascimento: os Estados
+          Unidos, com a RAND Corporation; a França, com a tradição de "La Prospective"; e a consolidação acadêmica
+          internacional que se seguiu.</p>
+
+        <h3>Marcos históricos</h3>
+        <table class="timeline-table">
+          <tbody>
+            <tr>
+              <td class="t-year">1945–48</td>
+              <td>A <strong>RAND Corporation</strong> é criada nos EUA. Ali, o físico e matemático <strong>Herman
+                  Kahn</strong> desenvolve o método de cenários como ferramenta de análise estratégica.</td>
+            </tr>
+            <tr>
+              <td class="t-year">1957</td>
+              <td>O filósofo francês <strong>Gaston Berger</strong> recupera o termo <em>prospective</em> e funda um
+                centro de estudos dedicado a pensar o futuro como construção coletiva.</td>
+            </tr>
+            <tr>
+              <td class="t-year">1961–67</td>
+              <td>Kahn deixa a RAND para fundar o Hudson Institute e publica, com Anthony Wiener, <em>The Year 2000: A
+                  Framework for Speculation on the Next Thirty-Three Years</em>, uma das obras fundadoras do campo.
+              </td>
+            </tr>
+            <tr>
+              <td class="t-year">1967</td>
+              <td>Institucionalização do diálogo global sobre o tema com a criação da <em>World Futures Studies
+                  Federation</em> (WFSF).</td>
+            </tr>
+            <tr>
+              <td class="t-year">1969</td>
+              <td>Primeiro programa de doutorado em Estudos do Futuro, criado na Universidade de Massachusetts.</td>
+            </tr>
+            <tr>
+              <td class="t-year">1979</td>
+              <td>No Brasil, <strong>Henrique Rattner</strong> publica <em>Estudos do futuro: introdução à
+                  antecipação tecnológica e social</em>, pela Fundação Getulio Vargas — marco de referência nacional.
+              </td>
+            </tr>
+            <tr>
+              <td class="t-year">2025</td>
+              <td>Criação da <strong>Associação Brasileira de Futuristas</strong> (ABFPro), consolidando uma
+                comunidade profissional organizada no país.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="reading-more">Saiba mais: <a
+            href="https://www.ifforesight.com/post/scenarios-learning-and-acting-from-the-future-part-1-a-blueprint-of-the-history-of-scenarios"
+            target="_blank" rel="noopener">A Blueprint of the History of Scenarios</a> · <a
+            href="https://www.meioemensagem.com.br/opiniao/mas-afinal-o-que-e-um-futurista" target="_blank"
+            rel="noopener">Mas, afinal, o que é um futurista?</a></p>
+      </section>
+
+      <section class="unit-section" id="por-que-gestores" aria-labelledby="por-que-gestores-title">
+        <p class="section-eyebrow">03 — Aplicação Gerencial</p>
+        <h2 id="por-que-gestores-title">Por que Gestores Devem Estudar Futuros</h2>
+
+        <p>A incerteza não é uma condição temporária do ambiente de negócios — é uma condição permanente. Mudanças
+          tecnológicas, geopolíticas, climáticas e sociais se sobrepõem em ritmos cada vez mais difíceis de
+          acompanhar. Nesse cenário, empresas globais como PwC, H&amp;M e Chanel têm criado laboratórios próprios de
+          prototipagem de futuros, justamente porque perceberam que decisões baseadas apenas no curto prazo perdem
+          competitividade diante de mudanças estruturais que levam cinco, dez ou vinte anos para amadurecer.</p>
+
+        <blockquote>Evitar a miopia do curto-prazismo é o principal benefício prático do campo — um risco tanto para
+          os negócios quanto para a sociedade como um todo. — Martha Gabriel, futurista brasileira</blockquote>
+
+        <p>Para um administrador, isso significa que os Estudos de Futuros não são um exercício acadêmico distante da
+          prática de gestão. São, na verdade, um instrumento de redução de risco estratégico: quanto mais cedo uma
+          organização identifica sinais de mudança, maior sua margem de manobra para se adaptar — ou para transformar
+          a mudança em vantagem competitiva.</p>
+
+        <p class="reading-more">Saiba mais: <a
+            href="https://fastcompanybrasil.com/worklife/quem-desenha-o-amanha-a-ascensao-dos-futuristas-nas-empresas/"
+            target="_blank" rel="noopener">Quem desenha o amanhã: a ascensão dos futuristas nas empresas</a> · <a
+            href="https://mittechreview.com.br/futurismo-os-futuros-de-hoje-nao-sao-mais-como-os-de-antigamente/"
+            target="_blank" rel="noopener">Futurismo: os futuros de hoje não são mais como os de antigamente</a></p>
+      </section>
+
+      <section class="unit-section" id="futuros-plurais" aria-labelledby="futuros-plurais-title">
+        <p class="section-eyebrow">04 — Conceito Central</p>
+        <h2 id="futuros-plurais-title">A Lógica dos Futuros Plurais</h2>
+
+        <p>Se há um único conceito que você deve levar desta unidade, é este: <strong>não existe o futuro, existem
+            futuros</strong>. Essa ideia é o que diferencia os Estudos de Futuros de qualquer forma de previsão
+          determinística — não existe uma trajetória única e linear a partir do presente, existem múltiplos futuros
+          alternativos que podem ser estudados e, principalmente, projetados.</p>
+
+        <p>Na prática, isso significa que uma organização que planeja com base em um único cenário ("o mercado vai
+          continuar crescendo 5% ao ano") está, na verdade, escolhendo — muitas vezes sem perceber — apenas um entre
+          vários futuros possíveis, e ignorando os demais. Os Estudos de Futuros propõem o oposto: mapear
+          deliberadamente um leque de futuros plausíveis, para que a estratégia da organização seja robusta o
+          suficiente para funcionar em mais de um deles.</p>
+
+        <p class="reading-more">Saiba mais: <a
+            href="https://www.mjvinnovation.com/pt-br/blog/future-studies-por-que-desenhar-futuros-para-o-seu-negocio-e-estrategico/"
+            target="_blank" rel="noopener">Future Studies: por que desenhar futuros para seu negócio é
+            estratégico?</a></p>
+      </section>
+
+      <section class="unit-section" id="cone-de-futuros" aria-labelledby="cone-de-futuros-title">
+        <p class="section-eyebrow">05 — Modelo</p>
+        <h2 id="cone-de-futuros-title">O Cone de Futuros</h2>
+
+        <p>O <strong>Cone de Futuros</strong> (<em>Futures Cone</em>) é o principal modelo visual do campo para
+          representar a pluralidade de futuros. Sua origem remonta ao filósofo canadense Charles Taylor, que em 1990
+          descreveu um "cone de plausibilidade"; o modelo foi posteriormente ampliado por Hancock e Bezold, em 1994,
+          e recebeu sua forma mais conhecida e didática nas mãos do físico e futurista australiano <strong>Joseph
+            Voros</strong>.</p>
+
+        <p>O modelo parte de um ponto no presente e se expande, como um cone (ou uma luz de lanterna), à medida que
+          avançamos no tempo — quanto mais distante o horizonte temporal, maior o leque de futuros possíveis.</p>
+
+        <div class="cone-diagram" role="img"
+          aria-label="Cone de futuros com camadas: possível, plausível, provável e preferível, a partir do presente">
+          <div class="cone-shape">
+            <span class="cone-layer cone-possible">Possível</span>
+            <span class="cone-layer cone-plausible">Plausível</span>
+            <span class="cone-layer cone-probable">Provável</span>
+            <span class="cone-layer cone-preferable">Preferível</span>
+          </div>
+          <p class="cone-caption">Do presente (vértice) à borda do cone: futuros cada vez menos restritos pelo
+            conhecimento atual.</p>
+        </div>
+
+        <h3>Camadas do cone</h3>
+        <ul>
+          <li><strong>Futuro provável:</strong> aquele que parece mais razoável de acontecer, considerando a
+            continuidade das tendências atuais.</li>
+          <li><strong>Futuro plausível:</strong> aquele que, embora não seja o mais esperado, é compatível com o que
+            sabemos sobre como o mundo funciona (leis físicas, processos sociais, econômicos etc.).</li>
+          <li><strong>Futuro possível:</strong> aquele que poderia acontecer com base em conhecimento que ainda não
+            temos, mas que poderíamos vir a desenvolver.</li>
+          <li><strong>Futuro preferível:</strong> aquele que a organização (ou a sociedade) <em>deseja</em> que
+            aconteça — introduz, portanto, um componente normativo e não apenas descritivo ao exercício.</li>
+        </ul>
+
+        <p>Vale destacar que essas categorias não são compartimentos estanques: elas se sobrepõem, e um mesmo evento
+          pode ser, ao mesmo tempo, pouco provável e altamente preferível — o que é justamente o tipo de tensão que a
+          análise estratégica de futuros ajuda a tornar visível.</p>
+
+        <p class="reading-more">Saiba mais: <a href="https://tech4future.info/en/futures-cone/" target="_blank"
+            rel="noopener">Futures Cone: what it is and its uses</a> · <a
+            href="https://www.planapp.gov.pt/glossario/cone-futuros-glossario-prospetiva/" target="_blank"
+            rel="noopener">Cone de futuros — Glossário de Prospetiva</a></p>
+      </section>
+
+      <section class="unit-section" id="planejamento-estrategico" aria-labelledby="planejamento-estrategico-title">
+        <p class="section-eyebrow">06 — Comparação</p>
+        <h2 id="planejamento-estrategico-title">Estudos de Futuros vs. Planejamento Estratégico Tradicional</h2>
+
+        <p>É comum confundir Estudos de Futuros com o planejamento estratégico convencional, mas os dois têm
+          propósitos distintos. O planejamento estratégico tradicional geralmente parte de uma projeção —
+          normalmente baseada na extrapolação de dados históricos — e organiza metas e recursos em torno dela. Os
+          Estudos de Futuros, por outro lado, começam questionando a própria projeção.</p>
+
+        <h3>Perguntas propostas por Sohail Inayatullah</h3>
+        <ol>
+          <li>Qual é a história do problema?</li>
+          <li>Quais tendências criaram o presente?</li>
+          <li>Se elas continuarem, como será o futuro?</li>
+          <li>Quais suposições ocultas sustentam essa projeção?</li>
+          <li>Quais alternativas emergem se alterarmos essas suposições?</li>
+        </ol>
+
+        <p>Essa é a diferença central: o planejamento estratégico tradicional tende a operar dentro de um único
+          futuro assumido como certo (muitas vezes chamado, na literatura do campo, de "futuro oficial"); os Estudos
+          de Futuros trabalham deliberadamente para expor e questionar esse futuro oficial, ampliando o espaço de
+          possibilidades antes de decidir.</p>
+
+        <p class="reading-more">Saiba mais: <a
+            href="https://www.mjvinnovation.com/pt-br/blog/future-studies-por-que-desenhar-futuros-para-o-seu-negocio-e-estrategico/"
+            target="_blank" rel="noopener">Future Studies: por que desenhar futuros para seu negócio é
+            estratégico?</a></p>
+      </section>
+
+      <section class="unit-section" id="ferramentas" aria-labelledby="ferramentas-title">
+        <p class="section-eyebrow">07 — Panorama</p>
+        <h2 id="ferramentas-title">Panorama das Ferramentas do Campo</h2>
+
+        <p>Esta unidade é introdutória, e as ferramentas específicas de Estudos de Futuros serão aprofundadas nas
+          próximas unidades da disciplina. Por ora, vale conhecer o panorama geral do que está por vir.</p>
+
+        <div class="method-grid">
+          <article class="method-card">
+            <h3>Mapeamento de sinais fracos</h3>
+            <p>Identificação de indícios iniciais, ainda pouco visíveis, de mudanças que podem se tornar relevantes
+              no futuro.</p>
+          </article>
+          <article class="method-card">
+            <h3>Identificação de tendências</h3>
+            <p>Análise de padrões de mudança já em curso e sua possível trajetória.</p>
+          </article>
+          <article class="method-card">
+            <h3>Construção de cenários</h3>
+            <p>Elaboração de narrativas estruturadas sobre diferentes futuros plausíveis, usadas para testar a
+              robustez de estratégias.</p>
+          </article>
+          <article class="method-card">
+            <h3>Foresight estratégico</h3>
+            <p>Processo organizacional que integra as ferramentas acima à tomada de decisão da empresa.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="unit-section" id="aplicacoes-praticas" aria-labelledby="aplicacoes-praticas-title">
+        <p class="section-eyebrow">08 — Prática Empresarial</p>
+        <h2 id="aplicacoes-praticas-title">Aplicações na Prática Empresarial</h2>
+
+        <p>Para tornar tudo isso concreto, vale observar como os conceitos desta unidade aparecem em diferentes
+          setores — e, em seguida, ir até o caso mais citado da literatura de Estudos de Futuros aplicados à gestão:
+          o da Shell.</p>
+
+        <h3>Exemplos aplicados</h3>
+        <div class="case-list">
+          <article class="case-card">
+            <h3>Setor de varejo</h3>
+            <p>Uma rede de lojas físicas que, ao mapear sinais fracos de mudança no comportamento do consumidor
+              (crescimento do comércio eletrônico, mudanças em hábitos de pagamento), constrói cenários alternativos
+              para os próximos cinco anos, em vez de projetar apenas a continuidade do modelo atual.</p>
+          </article>
+          <article class="case-card">
+            <h3>Setor financeiro</h3>
+            <p>Um banco que utiliza o Cone de Futuros para diferenciar o cenário "provável" de regulação do setor
+              daquele que seria "preferível" do ponto de vista do próprio banco, orientando sua atuação junto a
+              órgãos reguladores.</p>
+          </article>
+          <article class="case-card">
+            <h3>Gestão de pessoas</h3>
+            <p>Uma área de RH que, em vez de planejar treinamentos apenas com base nas competências atuais mais
+              demandadas, explora futuros plausíveis do mercado de trabalho para antecipar competências que ainda não
+              são valorizadas, mas podem vir a ser.</p>
+          </article>
+        </div>
+
+        <h3>Caso real: a Shell e a crise do petróleo de 1973</h3>
+        <p>Na virada dos anos 1960 para os 1970, uma equipe de planejamento da Royal Dutch Shell, liderada por
+          <strong>Pierre Wack</strong> e Ted Newland, passou a aplicar sistematicamente o método de cenários —
+          inspirado nos trabalhos pioneiros de Herman Kahn — para pensar o futuro do mercado de petróleo.</p>
+
+        <p>Por volta de 1971–1972, a equipe identificou um conjunto de forças estruturais que a maior parte dos
+          executivos do setor petrolífero ignorava: os países da OPEP estavam ganhando confiança política, alguns
+          produtores já haviam demonstrado capacidade de restringir a oferta para elevar preços, e os Estados Unidos
+          se tornavam, pela primeira vez, importadores líquidos de petróleo. A partir desses sinais, a equipe de Wack
+          construiu cenários nos quais os países produtores passariam a usar o petróleo como instrumento político e
+          econômico — um cenário considerado, à época, pouco convencional pela alta liderança da empresa.</p>
+
+        <blockquote>O objetivo do exercício de cenários nunca foi <em>prever</em> o futuro com exatidão, mas sim
+          modificar o "modelo mental" dos tomadores de decisão — isto é, preparar a organização para reconhecer e
+          agir diante de uma mudança, mesmo sem saber exatamente quando ela ocorreria. — Pierre Wack</blockquote>
+
+        <p>Quando a crise do petróleo de fato eclodiu, em outubro de 1973, após a formação de um embargo pela OPEP, a
+          Shell foi a única grande petrolífera preparada para o choque. Enquanto concorrentes foram pegos de
+          surpresa, a empresa avançou de uma posição modesta entre as "sete irmãs" do setor para se tornar uma das
+          líderes globais do mercado de petróleo já na década seguinte.</p>
+
+        <p>Esse episódio é considerado um marco na história da aplicação empresarial dos Estudos de Futuros — não
+          porque a Shell "acertou uma previsão", mas porque sua equipe de planejamento havia preparado a organização
+          para múltiplos futuros, e não apenas para o mais óbvio.</p>
+
+        <p class="reading-more">Saiba mais: <a
+            href="https://www.polytechnique-insights.com/en/columns/society/case-study-how-shell-anticipated-the-1973-oil-crisis/"
+            target="_blank" rel="noopener">Case study: how Shell anticipated the 1973 oil crisis</a> · <a
+            href="https://muitocurioso.org/caso-shell-e-o-planejamento-de-cenarios/" target="_blank"
+            rel="noopener">Caso Shell e o planejamento de cenários</a> · <a
+            href="https://en.wikipedia.org/wiki/Pierre_Wack" target="_blank" rel="noopener">Pierre Wack
+            (Wikipedia)</a></p>
+      </section>
+
+      <section class="unit-section unit-section--video" id="video-futuros-possiveis"
+        aria-labelledby="video-futuros-possiveis-title">
+        <p class="section-eyebrow">09 — Vídeo</p>
+        <h2 id="video-futuros-possiveis-title">Vídeo: Futuros Possíveis nas Empresas</h2>
+
+        <p><strong>"#18 Futuros Possíveis: Estudos de futuros nas empresas"</strong> — episódio do Podcast Lab de
+          Tendências, uma conversa com o futurista e estrategista de negócios Demetrio Teodorov sobre a importância
+          dos Estudos de Futuros nas empresas.</p>
+
+        <div class="video-embed" data-youtube-id="POeMGT0b4Og" aria-label="Player de vídeo: Futuros Possíveis nas Empresas">
+          <button class="video-play" type="button" aria-label="Reproduzir vídeo">
+            <span class="video-play-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </span>
+            <span class="video-play-text">Reproduzir vídeo</span>
+          </button>
+          <p class="video-config-note">"#18 Futuros Possíveis: Estudos de futuros nas empresas" — Podcast Lab de
+            Tendências</p>
+        </div>
+      </section>
+
+      <section class="unit-section" id="questoes-fixacao" aria-labelledby="questoes-fixacao-title">
+        <p class="section-eyebrow">10 — Avaliação</p>
+        <h2 id="questoes-fixacao-title">Questões de Fixação</h2>
+
+        <p>Teste seu entendimento sobre os principais conceitos desta unidade. Confira a resposta correta e a
+          justificativa logo após cada pergunta.</p>
+
+        <div class="case-list">
+          <article class="case-card">
+            <h3>1. Qual alternativa melhor diferencia os Estudos de Futuros de uma previsão convencional?</h3>
+            <ul>
+              <li>a) Estudos de Futuros calculam probabilidades exatas de eventos futuros usando modelos
+                estatísticos.</li>
+              <li>b) Estudos de Futuros partem do princípio de que existe um único futuro correto a ser descoberto
+                com dados suficientes.</li>
+              <li>c) Estudos de Futuros partem do princípio de que o futuro é aberto e indeterminado, explorando
+                múltiplos futuros possíveis em vez de prever um único resultado.</li>
+              <li>d) Estudos de Futuros e previsão são sinônimos e podem ser usados indistintamente na gestão.</li>
+            </ul>
+            <blockquote>Gabarito: c — a diferença central entre os dois campos é que a previsão pressupõe um
+              resultado único e determinado, enquanto os Estudos de Futuros trabalham com a ideia de futuros
+              plurais, abertos e passíveis de serem influenciados.</blockquote>
+          </article>
+
+          <article class="case-card">
+            <h3>2. Associe corretamente os nomes às suas contribuições na fundação do campo.</h3>
+            <ul>
+              <li>a) Herman Kahn desenvolveu o método de cenários na RAND; Gaston Berger recuperou o termo
+                "prospective" na França.</li>
+              <li>b) Herman Kahn fundou a WFSF; Gaston Berger criou o primeiro doutorado em Estudos do Futuro.</li>
+              <li>c) Gaston Berger trabalhou na RAND; Herman Kahn fundou o centro de prospectiva francês.</li>
+              <li>d) Ambos trabalharam exclusivamente no Brasil, dando origem ao campo nacional de Estudos de
+                Futuros.</li>
+            </ul>
+            <blockquote>Gabarito: a — Herman Kahn desenvolveu o método de cenários na RAND Corporation (EUA),
+              enquanto Gaston Berger recuperou o termo "prospective" em 1957 e fundou um centro de estudos na
+              França.</blockquote>
+          </article>
+
+          <article class="case-card">
+            <h3>3. No modelo do Cone de Futuros, de Joseph Voros, o que é o "futuro plausível"?</h3>
+            <ul>
+              <li>a) O futuro que a organização deseja que aconteça, independentemente de sua probabilidade.</li>
+              <li>b) O futuro mais esperado, com base na simples continuidade das tendências atuais.</li>
+              <li>c) Um futuro compatível com o que sabemos sobre como o mundo funciona, mesmo que não seja o mais
+                esperado.</li>
+              <li>d) Um futuro considerado tecnicamente impossível diante do conhecimento atual.</li>
+            </ul>
+            <blockquote>Gabarito: c — o futuro plausível é aquele admissível à luz do nosso entendimento atual sobre
+              leis físicas e processos sociais, mesmo sem ser o cenário mais provável.</blockquote>
+          </article>
+
+          <article class="case-card">
+            <h3>4. Segundo Pierre Wack, qual foi o verdadeiro objetivo do exercício de cenários na Shell?</h3>
+            <ul>
+              <li>a) Prever com exatidão a data em que a crise do petróleo ocorreria.</li>
+              <li>b) Substituir completamente o planejamento estratégico tradicional da empresa.</li>
+              <li>c) Modificar o modelo mental dos tomadores de decisão, preparando-os para reconhecer e agir diante
+                de mudanças estruturais.</li>
+              <li>d) Reduzir os investimentos da empresa no setor de exploração de petróleo.</li>
+            </ul>
+            <blockquote>Gabarito: c — Wack afirmava que o objetivo dos cenários nunca foi prever o futuro com
+              precisão, mas preparar a organização para agir diante de mudanças, mesmo sem saber exatamente quando
+              ocorreriam.</blockquote>
+          </article>
+
+          <article class="case-card">
+            <h3>5. Qual a principal diferença entre Estudos de Futuros e Planejamento Estratégico tradicional?</h3>
+            <ul>
+              <li>a) O Planejamento Estratégico tradicional tende a partir de uma única projeção assumida como certa,
+                enquanto os Estudos de Futuros questionam essa projeção e exploram múltiplos futuros alternativos.
+              </li>
+              <li>b) O Planejamento Estratégico tradicional é mais recente do que os Estudos de Futuros.</li>
+              <li>c) Os Estudos de Futuros não podem ser aplicados a organizações privadas, apenas a governos.</li>
+              <li>d) Não há diferença metodológica relevante entre os dois campos.</li>
+            </ul>
+            <blockquote>Gabarito: a — o planejamento estratégico convencional costuma operar dentro de um único
+              "futuro oficial", enquanto os Estudos de Futuros trabalham deliberadamente para expor e questionar
+              essa projeção única, ampliando o espaço de possibilidades consideradas.</blockquote>
+          </article>
+        </div>
+      </section>
+
+      <section class="unit-section" id="referencias" aria-labelledby="referencias-title">
+        <p class="section-eyebrow">11 — Bibliografia</p>
+        <h2 id="referencias-title">Referências Consultadas</h2>
+
+        <ul>
+          <li>ANDRIONI, Fábio Sapragonas. <em>Quando a história também é futuro: as concepções de tempo passado, de
+              futuro e do Brasil em Herman Kahn e no Hudson Institute (1947-1979)</em>. Tese de doutorado — FFLCH,
+            USP, 2014. <a
+              href="https://teses.usp.br/teses/disponiveis/8/8138/tde-25052015-161036/publico/2014_FabioSapragonasAndrioni_VOrig.pdf"
+              target="_blank" rel="noopener">Disponível aqui</a>.</li>
+          <li>ASSOCIAÇÃO PORTUGUESA DE SOCIOLOGIA. <em>Teorias e Metodologias — Limites da Prospetiva</em>. IX
+            Congresso Português de Sociologia. <a
+              href="https://associacaoportuguesasociologia.pt/ix_congresso/docs/final/COM0691.pdf" target="_blank"
+              rel="noopener">Disponível aqui</a>.</li>
+          <li>ENAP — Escola Nacional de Administração Pública. <em>Cone de Futuros</em>. <a
+              href="https://repositorio.enap.gov.br/bitstream/1/6703/37/Cone%20de%20Futuros.pdf" target="_blank"
+              rel="noopener">Disponível aqui</a>.</li>
+          <li>FAST COMPANY BRASIL. <em>Quem desenha o amanhã: a ascensão dos futuristas nas empresas</em>. 2026. <a
+              href="https://fastcompanybrasil.com/worklife/quem-desenha-o-amanha-a-ascensao-dos-futuristas-nas-empresas/"
+              target="_blank" rel="noopener">Disponível aqui</a>.</li>
+          <li>GABRIEL, Martha. <em>Futurismo: os futuros de hoje não são mais como os de antigamente</em>. MIT
+            Technology Review Brasil. <a
+              href="https://mittechreview.com.br/futurismo-os-futuros-de-hoje-nao-sao-mais-como-os-de-antigamente/"
+              target="_blank" rel="noopener">Disponível aqui</a>.</li>
+          <li>IFFORESIGHT. <em>Scenarios: Learning and Acting from the Future — Part 1: A Blueprint of the History of
+              Scenarios</em>. <a
+              href="https://www.ifforesight.com/post/scenarios-learning-and-acting-from-the-future-part-1-a-blueprint-of-the-history-of-scenarios"
+              target="_blank" rel="noopener">Disponível aqui</a>.</li>
+          <li>INSIGHT INTELIGÊNCIA. <em>Como será o amanhã? As quatro dimensões dos Estudos de Futuros e
+              Foresight</em>. Revista Inteligência, 2026. <a
+              href="https://insightinteligencia.com.br/como-sera-o-amanha-as-quatro-dimensoes-dos-estudos-de-futuros-e-foresight/"
+              target="_blank" rel="noopener">Disponível aqui</a>.</li>
+          <li>MEIO &amp; MENSAGEM. <em>Mas, afinal, o que é um futurista?</em> 2025. <a
+              href="https://www.meioemensagem.com.br/opiniao/mas-afinal-o-que-e-um-futurista" target="_blank"
+              rel="noopener">Disponível aqui</a>.</li>
+          <li>MJV INNOVATION. <em>Future Studies: por que desenhar futuros para seu negócio é estratégico?</em> <a
+              href="https://www.mjvinnovation.com/pt-br/blog/future-studies-por-que-desenhar-futuros-para-o-seu-negocio-e-estrategico/"
+              target="_blank" rel="noopener">Disponível aqui</a>.</li>
+          <li>MUITO CURIOSO. <em>Caso Shell e o planejamento de cenários</em>. 2017. <a
+              href="https://muitocurioso.org/caso-shell-e-o-planejamento-de-cenarios/" target="_blank"
+              rel="noopener">Disponível aqui</a>.</li>
+          <li>PASSOS, Alfredo. <em>A Construção de Cenários e a Inteligência Competitiva</em>. LinkedIn Pulse, 2021.
+            <a href="https://pt.linkedin.com/pulse/constru%C3%A7%C3%A3o-de-cen%C3%A1rios-e-intelig%C3%AAncia-competitiva-alfredo-passos"
+              target="_blank" rel="noopener">Disponível aqui</a>.</li>
+          <li>PLANAPP (Portugal). <em>Cone de futuros — Glossário de Prospetiva</em>. <a
+              href="https://www.planapp.gov.pt/glossario/cone-futuros-glossario-prospetiva/" target="_blank"
+              rel="noopener">Disponível aqui</a>.</li>
+          <li>POLYTECHNIQUE INSIGHTS. <em>Case study: how Shell anticipated the 1973 oil crisis</em>. 2025. <a
+              href="https://www.polytechnique-insights.com/en/columns/society/case-study-how-shell-anticipated-the-1973-oil-crisis/"
+              target="_blank" rel="noopener">Disponível aqui</a>.</li>
+          <li>RATTNER, Henrique. <em>Estudos do futuro: introdução à antecipação tecnológica e social</em>. São
+            Paulo: Editora da Fundação Getulio Vargas, 1979.</li>
+          <li>TECH4FUTURE. <em>Futures Cone: what it is and its uses</em>. 2024. <a
+              href="https://tech4future.info/en/futures-cone/" target="_blank" rel="noopener">Disponível aqui</a>.
+          </li>
+          <li>VOROS, Joseph. "The Futures Cone, Use and History". In: POLI, Roberto (Ed.). <em>Handbook of
+              Anticipation: Theoretical and Applied Aspects of the Use of Future in Decision Making</em>. Springer,
+            2017.</li>
+          <li>WIKIPÉDIA. <em>Futurologia</em>. <a href="https://pt.wikipedia.org/wiki/Futurologia" target="_blank"
+              rel="noopener">Disponível aqui</a>.</li>
+          <li>WIKIPEDIA (inglês). <em>Pierre Wack</em>. <a href="https://en.wikipedia.org/wiki/Pierre_Wack"
+              target="_blank" rel="noopener">Disponível aqui</a>.</li>
+        </ul>
+      </section>
+
+      <footer class="unit-footer">
+        <p>Unidade 1 — Introdução aos Estudos de Futuros · Curso de Administração · Material de apoio para uso em
+          disciplina EAD.</p>
+      </footer>
+
+    </main>
+  </div>
+
+  <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 15l-6-6-6 6" />
+    </svg>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
