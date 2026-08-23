@@ -61,10 +61,10 @@ button {
 
 .brand-mark {
     display: grid;
-    width: 38px;
-    height: 38px;
+    width: auto;
+    padding: 5px 10px;
     place-items: center;
-    border-radius: 10px;
+    border-radius: 6px;
     color: white;
     background: var(--ink);
     font-family: "Space Grotesk", sans-serif;
