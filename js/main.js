@@ -58,6 +58,46 @@
     });
   }
 
+  /* ---------- Text-size controls ----------
+     Drives the --content-scale CSS custom property (see :root in
+     style.css), which every content typography rule multiplies its
+     font-size by. This keeps headings, eyebrows, hero text and card
+     labels scaling together with the body copy, on every page.
+  */
+  var TEXT_SCALE_KEY = "ef-text-scale";
+  var TEXT_SCALE_MIN = 0.85;
+  var TEXT_SCALE_MAX = 1.3;
+  var TEXT_SCALE_STEP = 0.1;
+  var decreaseBtn = document.getElementById("textSizeDecrease");
+  var increaseBtn = document.getElementById("textSizeIncrease");
+  var currentTextScale = 1;
+
+  function applyTextScale(scale) {
+    scale = Math.round(Math.min(TEXT_SCALE_MAX, Math.max(TEXT_SCALE_MIN, scale)) * 100) / 100;
+    document.documentElement.style.setProperty("--content-scale", scale);
+    if (decreaseBtn) decreaseBtn.setAttribute("aria-disabled", scale <= TEXT_SCALE_MIN ? "true" : "false");
+    if (increaseBtn) increaseBtn.setAttribute("aria-disabled", scale >= TEXT_SCALE_MAX ? "true" : "false");
+    return scale;
+  }
+
+  (function initTextScale() {
+    var stored = null;
+    try { stored = parseFloat(localStorage.getItem(TEXT_SCALE_KEY)); } catch (e) { /* storage unavailable */ }
+    currentTextScale = applyTextScale(isNaN(stored) ? 1 : stored);
+  })();
+
+  function stepTextScale(delta) {
+    currentTextScale = applyTextScale(currentTextScale + delta);
+    try { localStorage.setItem(TEXT_SCALE_KEY, currentTextScale); } catch (e) { /* storage unavailable */ }
+  }
+
+  if (decreaseBtn) {
+    decreaseBtn.addEventListener("click", function () { stepTextScale(-TEXT_SCALE_STEP); });
+  }
+  if (increaseBtn) {
+    increaseBtn.addEventListener("click", function () { stepTextScale(TEXT_SCALE_STEP); });
+  }
+
   /* ---------- Scroll progress bar ---------- */
   var progressBar = document.getElementById("progressBar");
   function updateProgress() {
@@ -165,31 +205,51 @@
   }
 
   /* ---------- YouTube facade embed ----------
-     Set the video ID below (or via the data-youtube-id attribute on
-     .video-embed in index.html) to enable playback for
-     "Vídeo: A Roda do Futuro". Example: "dQw4w9WgXcQ"
+     Set the video ID via the data-youtube-id attribute on each
+     .video-embed. Its thumbnail (cover art) is fetched automatically
+     from YouTube and shown behind the play button.
   */
-  var DEFAULT_YOUTUBE_ID = "";
+  var videoEmbeds = Array.prototype.slice.call(document.querySelectorAll(".video-embed"));
 
-  var videoEmbed = document.querySelector(".video-embed");
-  if (videoEmbed) {
+  function loadVideoThumbnail(videoEmbed, videoId) {
+    var qualities = ["maxresdefault", "hqdefault"];
+    (function tryQuality(index) {
+      if (index >= qualities.length) return;
+      var probe = new Image();
+      probe.onload = function () {
+        // YouTube returns a 120x90 grey placeholder when a quality isn't available.
+        if (probe.naturalWidth === 120 && probe.naturalHeight === 90) {
+          tryQuality(index + 1);
+        } else {
+          videoEmbed.style.backgroundImage = "url('https://img.youtube.com/vi/" + encodeURIComponent(videoId) + "/" + qualities[index] + ".jpg')";
+        }
+      };
+      probe.onerror = function () { tryQuality(index + 1); };
+      probe.src = "https://img.youtube.com/vi/" + encodeURIComponent(videoId) + "/" + qualities[index] + ".jpg";
+    })(0);
+  }
+
+  videoEmbeds.forEach(function (videoEmbed) {
     var playButton = videoEmbed.querySelector(".video-play");
-    var videoId = videoEmbed.getAttribute("data-youtube-id") || DEFAULT_YOUTUBE_ID;
+    var videoId = videoEmbed.getAttribute("data-youtube-id") || "";
+    var videoTitle = videoEmbed.getAttribute("aria-label") || "Vídeo";
+
+    if (videoId) loadVideoThumbnail(videoEmbed, videoId);
 
     if (playButton) {
       playButton.addEventListener("click", function () {
         if (!videoId) {
-          window.alert("Vídeo ainda não configurado. Adicione o ID do YouTube em data-youtube-id (index.html) ou DEFAULT_YOUTUBE_ID (js/main.js).");
+          window.alert("Vídeo ainda não configurado. Adicione o ID do YouTube em data-youtube-id.");
           return;
         }
         var iframe = document.createElement("iframe");
         iframe.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(videoId) + "?autoplay=1&rel=0";
-        iframe.title = "A Roda do Futuro";
+        iframe.title = videoTitle;
         iframe.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
         iframe.allowFullscreen = true;
         videoEmbed.appendChild(iframe);
         videoEmbed.classList.add("is-playing");
       });
     }
-  }
+  });
 })();
