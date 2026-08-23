@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Canvas interativo para análise PESTEL.">
+    <title>PESTEL Canvas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="app-shell">
+        <header class="topbar">
+            <div class="brand-block">
+                <span class="brand-mark" aria-hidden="true">P</span>
+                <div>
+                    <p class="eyebrow">FERRAMENTA DE CENÁRIOS</p>
+                    <h1>PESTEL Canvas</h1>
+                </div>
+            </div>
+            <div class="topbar-actions">
+                <span class="save-status" id="save-status" aria-live="polite">Pronto para começar</span>
+                <div class="action-buttons">
+                    <button class="report-button" id="report-button" type="button" title="Baixar relatório em PDF">
+                        <span aria-hidden="true">↓</span> Baixar Relatório
+                    </button>
+                    <button class="clear-button" id="clear-button" type="button" title="Limpar todos os fatores">Limpar
+                        canvas</button>
+                </div>
+            </div>
+        </header>
+
+        <section class="intro" aria-labelledby="canvas-title">
+            <div>
+                <p class="section-kicker">MAPA DE FORÇAS EXTERNAS</p>
+                <h2 id="canvas-title">O que está moldando o seu contexto?</h2>
+            </div>
+            <p class="intro-copy">Registre sinais, tendências e acontecimentos que podem influenciar sua estratégia.</p>
+        </section>
+
+        <section class="canvas-wrap" aria-label="Canvas de análise PESTEL">
+            <div class="pestel-grid" id="pestel-grid">
+                <article class="factor-column political" data-factor="Político">
+                    <header class="column-header">
+                        <span class="factor-letter">P</span>
+                        <div>
+                            <h3>Político</h3><span class="factor-caption">Governo e políticas públicas</span>
+                        </div>
+                    </header>
+                    <div class="notes-list" aria-live="polite"></div>
+                    <button class="add-note" type="button"><span aria-hidden="true">+</span> Adicionar fator</button>
+                </article>
+                <article class="factor-column economic" data-factor="Econômico">
+                    <header class="column-header">
+                        <span class="factor-letter">E</span>
+                        <div>
+                            <h3>Econômico</h3><span class="factor-caption">Mercado e finanças</span>
+                        </div>
+                    </header>
+                    <div class="notes-list" aria-live="polite"></div>
+                    <button class="add-note" type="button"><span aria-hidden="true">+</span> Adicionar fator</button>
+                </article>
+                <article class="factor-column social" data-factor="Social">
+                    <header class="column-header">
+                        <span class="factor-letter">S</span>
+                        <div>
+                            <h3>Social</h3><span class="factor-caption">Pessoas e comportamento</span>
+                        </div>
+                    </header>
+                    <div class="notes-list" aria-live="polite"></div>
+                    <button class="add-note" type="button"><span aria-hidden="true">+</span> Adicionar fator</button>
+                </article>
+                <article class="factor-column technological" data-factor="Tecnológico">
+                    <header class="column-header">
+                        <span class="factor-letter">T</span>
+                        <div>
+                            <h3>Tecnológico</h3><span class="factor-caption">Inovação e infraestrutura</span>
+                        </div>
+                    </header>
+                    <div class="notes-list" aria-live="polite"></div>
+                    <button class="add-note" type="button"><span aria-hidden="true">+</span> Adicionar fator</button>
+                </article>
+                <article class="factor-column ecological" data-factor="Ecológico">
+                    <header class="column-header">
+                        <span class="factor-letter">E</span>
+                        <div>
+                            <h3>Ecológico</h3><span class="factor-caption">Ambiente e sustentabilidade</span>
+                        </div>
+                    </header>
+                    <div class="notes-list" aria-live="polite"></div>
+                    <button class="add-note" type="button"><span aria-hidden="true">+</span> Adicionar fator</button>
+                </article>
+                <article class="factor-column legal" data-factor="Legal">
+                    <header class="column-header">
+                        <span class="factor-letter">L</span>
+                        <div>
+                            <h3>Legal</h3><span class="factor-caption">Leis e regulamentações</span>
+                        </div>
+                    </header>
+                    <div class="notes-list" aria-live="polite"></div>
+                    <button class="add-note" type="button"><span aria-hidden="true">+</span> Adicionar fator</button>
+                </article>
+            </div>
+        </section>
+
+        <footer class="canvas-footer">
+            <span><span class="footer-dot"></span> Seus fatores são salvos neste navegador</span>
+            <span id="factor-count">0 fatores registrados</span>
+        </footer>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
