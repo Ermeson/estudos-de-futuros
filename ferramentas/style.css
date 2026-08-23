@@ -139,6 +139,10 @@ h1 {
     background: var(--accent);
 }
 
+.mobile-report-action {
+    display: none;
+}
+
 .intro {
     display: flex;
     align-items: end;
@@ -147,18 +151,39 @@ h1 {
     margin: 20px 0;
 }
 
+.report-title {
+    display: none;
+}
+
 .intro h2 {
     margin: 0;
     font: 900 clamp(28px, 4vw, 48px)/1.05 "Open Sans", sans-serif;
     letter-spacing: -2px;
 }
 
-.intro-copy {
+.intro-input {
     max-width: 300px;
+    width: 100%;
     margin: 0 2px 3px 0;
+    padding: 12px 13px;
+    border: 1px solid #9ba7a9;
+    border-radius: 7px;
     color: var(--muted);
-    font-size: 13px;
-    line-height: 1.55;
+    outline: 0;
+    background: transparent;
+    font-size: 14px;
+    line-height: 1.4;
+    font-family: "Open Sans", sans-serif;
+}
+
+.intro-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(236, 107, 79, .12);
+}
+
+.intro-input::placeholder {
+    color: var(--muted);
+    opacity: 1;
 }
 
 .canvas-wrap {
@@ -356,13 +381,15 @@ h1 {
 
 @media print {
     @page {
-        size: A4 landscape;
-        margin: 12mm;
+        size: A4 portrait;
+        margin: 16mm;
     }
 
     body.print-mode {
-        color: #17202a;
-        background: white;
+        color: #000;
+        background: #fff;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
     }
 
     .print-mode .app-shell {
@@ -370,13 +397,7 @@ h1 {
         padding: 0;
     }
 
-    .print-mode .topbar {
-        padding-bottom: 8mm;
-        border-bottom: 1px solid #dfe4e5;
-    }
-
-    .print-mode .topbar-actions,
-    .print-mode .intro-copy,
+    .print-mode .topbar,
     .print-mode .add-note,
     .print-mode .delete-note,
     .print-mode .canvas-footer {
@@ -384,11 +405,38 @@ h1 {
     }
 
     .print-mode .intro {
-        margin: 9mm 0 6mm;
+        display: block;
+        margin: 0 0 10mm;
     }
 
-    .print-mode .intro h2 {
-        font-size: 22px;
+    .print-mode .intro>div {
+        display: none;
+    }
+
+    .print-mode .report-title {
+        display: block;
+        margin: 0 0 5mm;
+        color: #000;
+        font: 700 18px/1.1 "Open Sans", sans-serif;
+        letter-spacing: .08em;
+    }
+
+    .print-mode .intro-input {
+        display: block;
+        max-width: none;
+        margin: 0;
+        padding: 0 0 3mm;
+        border: 0;
+        border-bottom: 1px solid #000;
+        color: #000;
+        background: #fff;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .print-mode .intro-input::placeholder {
+        color: #000;
+        opacity: 1;
     }
 
     .print-mode .canvas-wrap {
@@ -397,40 +445,73 @@ h1 {
     }
 
     .print-mode .pestel-grid {
+        display: block;
         min-width: 0;
-        border-color: #dfe4e5;
+        border: 0;
+        background: #fff;
         box-shadow: none;
     }
 
-    .print-mode .factor-column {
-        min-height: 190mm;
+    .print-mode .factor-column:not(:has(.note textarea:not(:placeholder-shown))) {
+        display: none;
     }
 
     .print-mode .column-header {
-        min-height: 29mm;
-        padding: 10px;
+        min-height: 0;
+        padding: 0 0 3mm;
+        color: #000;
+        background: #fff !important;
+        border-bottom: 1px solid #000;
     }
 
     .print-mode .factor-letter {
-        font-size: 34px;
+        display: none;
+    }
+
+    .print-mode .column-header h3 {
+        margin: 0;
+        color: #000;
+        font-size: 15px;
+    }
+
+    .print-mode .factor-caption {
+        display: none;
     }
 
     .print-mode .notes-list {
-        gap: 5px;
-        padding: 8px;
+        gap: 0;
+        padding: 3mm 0 5mm;
+    }
+
+    .print-mode .note:has(textarea:placeholder-shown) {
+        display: none;
     }
 
     .print-mode .note {
-        min-height: 20mm;
-        padding: 7px;
+        min-height: 0;
+        padding: 0 0 2mm;
         box-shadow: none;
     }
 
     .print-mode .note textarea {
-        min-height: 14mm;
+        min-height: 0;
         resize: none;
         overflow: visible;
-        font-size: 9px;
+        color: #000;
+        font-size: 11px;
+        line-height: 1.45;
+    }
+
+    .print-mode .factor-column {
+        min-height: 0;
+        margin-bottom: 7mm;
+        border: 0;
+        border-bottom: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    .print-mode .factor-column:last-child {
+        margin-bottom: 0;
     }
 }
 
@@ -498,8 +579,9 @@ h1 {
         letter-spacing: -2px;
     }
 
-    .intro-copy {
+    .intro-input {
         max-width: 340px;
+        margin: 0;
     }
 
     .canvas-wrap {
@@ -508,8 +590,11 @@ h1 {
 
     .pestel-grid {
         display: block;
-        overflow: hidden;
-        border-radius: 8px;
+        overflow: visible;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
     }
 
     .factor-column,
@@ -518,10 +603,14 @@ h1 {
         border-top: 0;
         border-right: 0;
         border-bottom: 1px solid var(--line);
+        border-radius: 8px;
+        overflow: hidden;
+        margin-bottom: 12px;
     }
 
     .factor-column:last-child {
         border-bottom: 0;
+        margin-bottom: 0;
     }
 
     .column-header {
@@ -548,6 +637,16 @@ h1 {
 
     .add-note {
         margin-bottom: 13px;
+    }
+
+    .mobile-report-action {
+        display: block;
+        margin-top: 16px;
+    }
+
+    .mobile-report-action .report-button {
+        width: 100%;
+        padding: 12px 14px;
     }
 
     .canvas-footer {

@@ -1,9 +1,12 @@
 const storageKey = "pestel-canvas-notes";
+const phenomenonStorageKey = "pestel-canvas-phenomenon";
 const grid = document.querySelector("#pestel-grid");
 const factorCount = document.querySelector("#factor-count");
 const saveStatus = document.querySelector("#save-status");
 const clearButton = document.querySelector("#clear-button");
 const reportButton = document.querySelector("#report-button");
+const mobileReportButton = document.querySelector("#mobile-report-button");
+const phenomenonInput = document.querySelector("#phenomenon-input");
 
 function getNotes() {
     try {
@@ -23,7 +26,7 @@ function saveNotes() {
     updateCount();
 }
 
-function createNote(column, value = "") {
+function createNote(column, value = "", shouldFocus = true) {
     const note = document.createElement("div");
     note.className = "note";
     note.innerHTML = `
@@ -38,7 +41,10 @@ function createNote(column, value = "") {
         saveNotes();
     });
     column.querySelector(".notes-list").append(note);
-    textarea.focus();
+    if (shouldFocus) {
+        note.scrollIntoView({ behavior: "smooth", block: "center" });
+        textarea.focus({ preventScroll: true });
+    }
     updateCount();
 }
 
@@ -49,12 +55,18 @@ function updateCount() {
 
 function restoreNotes() {
     const notes = getNotes();
+    phenomenonInput.value = localStorage.getItem(phenomenonStorageKey) || "";
     document.querySelectorAll(".factor-column").forEach((column) => {
-        (notes[column.dataset.factor] || []).forEach((value) => createNote(column, value));
+        (notes[column.dataset.factor] || []).forEach((value) => createNote(column, value, false));
     });
     updateCount();
     if (document.querySelector(".note")) saveStatus.textContent = "Notas restauradas";
 }
+
+phenomenonInput.addEventListener("input", () => {
+    localStorage.setItem(phenomenonStorageKey, phenomenonInput.value);
+    saveStatus.textContent = "Salvo agora";
+});
 
 grid.addEventListener("click", (event) => {
     const button = event.target.closest(".add-note");
@@ -62,15 +74,17 @@ grid.addEventListener("click", (event) => {
 });
 
 clearButton.addEventListener("click", () => {
-    if (!document.querySelector(".note")) return;
+    if (!document.querySelector(".note") && !phenomenonInput.value) return;
     if (window.confirm("Remover todos os fatores do canvas?")) {
         document.querySelectorAll(".notes-list").forEach((list) => { list.innerHTML = ""; });
+        phenomenonInput.value = "";
+        localStorage.removeItem(phenomenonStorageKey);
         saveNotes();
         saveStatus.textContent = "Canvas limpo";
     }
 });
 
-reportButton.addEventListener("click", () => {
+function downloadReport() {
     saveNotes();
     document.body.classList.add("print-mode");
     saveStatus.textContent = "Preparando relatório";
@@ -79,6 +93,9 @@ reportButton.addEventListener("click", () => {
         document.body.classList.remove("print-mode");
         saveStatus.textContent = "Relatório pronto para baixar";
     }, 80);
-});
+}
+
+reportButton.addEventListener("click", downloadReport);
+mobileReportButton.addEventListener("click", downloadReport);
 
 restoreNotes();

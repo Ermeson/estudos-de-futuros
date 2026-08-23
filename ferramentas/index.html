@@ -8,8 +8,9 @@
     <title>PESTEL Canvas</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -21,7 +22,7 @@
                 <span class="brand-mark" aria-hidden="true">P</span>
                 <div>
                     <p class="eyebrow">FERRAMENTA DE CENÁRIOS</p>
-                    <h1>PESTEL Canvas</h1>
+                    <h1>Análise PESTEL</h1>
                 </div>
             </div>
             <div class="topbar-actions">
@@ -37,11 +38,13 @@
         </header>
 
         <section class="intro" aria-labelledby="canvas-title">
+            <p class="report-title">ANÁLISE PESTEL</p>
             <div>
                 <p class="section-kicker">MAPA DE FORÇAS EXTERNAS</p>
                 <h2 id="canvas-title">O que está moldando o seu contexto?</h2>
             </div>
-            <p class="intro-copy">Registre sinais, tendências e acontecimentos que podem influenciar sua estratégia.</p>
+            <input class="intro-input" id="phenomenon-input" type="text" placeholder="Digite o fenômeno"
+                aria-label="Fenômeno que está sendo estudado">
         </section>
 
         <section class="canvas-wrap" aria-label="Canvas de análise PESTEL">
@@ -108,6 +111,12 @@
                 </article>
             </div>
         </section>
+
+        <div class="mobile-report-action">
+            <button class="report-button" id="mobile-report-button" type="button" title="Baixar relatório em PDF">
+                <span aria-hidden="true">↓</span> Baixar Relatório
+            </button>
+        </div>
 
         <footer class="canvas-footer">
             <span><span class="footer-dot"></span> Seus fatores são salvos neste navegador</span>
