@@ -1059,6 +1059,11 @@ blockquote p:last-child {
   }
 }
 
+.unit-figure__download {
+  margin: -1rem 0 1.6rem;
+  text-align: right;
+}
+
 /* ---------- Footer ---------- */
 .unit-footer {
   max-width: var(--content-max-width);
