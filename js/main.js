@@ -243,9 +243,10 @@
           return;
         }
         var iframe = document.createElement("iframe");
-        iframe.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(videoId) + "?autoplay=1&rel=0";
+        iframe.src = "https://www.youtube.com/embed/" + encodeURIComponent(videoId) + "?autoplay=1&rel=0";
         iframe.title = videoTitle;
-        iframe.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        iframe.referrerPolicy = "strict-origin-when-cross-origin";
         iframe.allowFullscreen = true;
         videoEmbed.appendChild(iframe);
         videoEmbed.classList.add("is-playing");

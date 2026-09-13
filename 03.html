@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estudos de Futuros — Unidade de Aprendizagem</title>
+  <meta name="description"
+    content="Unidade 3 — A Ferramenta PPF: Passado, Presente e Futuro. Dois triângulos que se cruzam, cinco elementos, e o caso Netflix aplicado.">
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='38' fill='none' stroke='%232b6e63' stroke-width='7'/%3E%3Cpath d='M50 20 L50 50 L68 62' fill='none' stroke='%232b6e63' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+
+  <button class="nav-toggle" id="navToggle" aria-label="Abrir navegação" aria-expanded="false" aria-controls="sidebar">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-backdrop" id="navBackdrop"></div>
+
+  <div class="text-size-controls" role="group" aria-label="Ajustar tamanho do texto">
+    <button class="text-size-btn text-size-btn--decrease" id="textSizeDecrease" type="button"
+      aria-label="Diminuir tamanho do texto">
+      <span class="text-size-icon" aria-hidden="true">A<sup>−</sup></span>
+    </button>
+    <button class="text-size-btn text-size-btn--increase" id="textSizeIncrease" type="button"
+      aria-label="Aumentar tamanho do texto">
+      <span class="text-size-icon" aria-hidden="true">A<sup>+</sup></span>
+    </button>
+  </div>
+
+  <div class="layout">
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-inner">
+        <div class="brand-logo">
+          <img src="img/logo-unifap.svg" alt="Logotipo UNIFAP" width="132" height="33" loading="eager">
+        </div>
+
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 100 100" width="26" height="26">
+              <circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="7" />
+              <path d="M50 20 L50 50 L68 62" fill="none" stroke="currentColor" stroke-width="7"
+                stroke-linecap="round" />
+            </svg>
+          </span>
+          <div class="brand-text">
+            <span class="brand-title">Estudos de Futuros</span>
+            <span class="brand-subtitle">Unidade 3 · Ferramenta PPF</span>
+          </div>
+        </div>
+
+        <button class="sidebar-collapse" id="sidebarCollapse" aria-label="Recolher menu" aria-expanded="true"
+          aria-controls="sidebar">
+          <svg class="collapse-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+          <span class="sidebar-collapse-label">Recolher menu</span>
+        </button>
+
+        <nav class="toc" aria-label="Sumário da unidade">
+          <ol id="tocList">
+            <li><a href="#passado-como-raiz" data-index="01"><span class="toc-index">01</span><span
+                  class="toc-label">Por que Olhar para Trás</span></a></li>
+            <li><a href="#continuidade-descontinuidade" data-index="02"><span class="toc-index">02</span><span
+                  class="toc-label">Continuidade e Descontinuidade</span></a></li>
+            <li><a href="#apresentacao-ppf" data-index="03"><span class="toc-index">03</span><span
+                  class="toc-label">A Ferramenta PPF</span></a></li>
+            <li><a href="#elemento-passado" data-index="04"><span class="toc-index">04</span><span
+                  class="toc-label">Passado: a Raiz do Presente</span></a></li>
+            <li><a href="#elemento-presente" data-index="05"><span class="toc-index">05</span><span
+                  class="toc-label">Presente como Ponto de Leitura</span></a></li>
+            <li><a href="#elemento-mudancas" data-index="06"><span class="toc-index">06</span><span
+                  class="toc-label">Mudanças</span></a></li>
+            <li><a href="#elemento-permanencias" data-index="07"><span class="toc-index">07</span><span
+                  class="toc-label">Permanências</span></a></li>
+            <li><a href="#elemento-futuros" data-index="08"><span class="toc-index">08</span><span
+                  class="toc-label">Futuros Plausíveis</span></a></li>
+            <li><a href="#anatomia-ppf" data-index="09"><span class="toc-index">09</span><span
+                  class="toc-label">Anatomia da Ferramenta PPF</span></a></li>
+            <li><a href="#exemplos-aplicados" data-index="10"><span class="toc-index">10</span><span
+                  class="toc-label">Exemplos Aplicados</span></a></li>
+            <li><a href="#caso-netflix" data-index="11"><span class="toc-index">11</span><span
+                  class="toc-label">Caso Real: Netflix pelo PPF</span></a></li>
+            <li><a href="#ferramentas-correlatas" data-index="12"><span class="toc-index">12</span><span
+                  class="toc-label">PPF e Ferramentas Correlatas</span></a></li>
+            <li><a href="#video-ppf" data-index="13"><span class="toc-index">13</span><span
+                  class="toc-label">Vídeo</span></a></li>
+            <li><a href="#referencias" data-index="14"><span class="toc-index">14</span><span
+                  class="toc-label">Referências</span></a></li>
+          </ol>
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="user-card">
+            <img class="user-avatar" src="https://avatars.githubusercontent.com/u/4398869" alt="Foto de Ermeson Silva"
+              width="36" height="36" loading="lazy">
+            <div class="user-info">
+              <span class="user-name">Ermeson Silva</span>
+              <span class="user-role">Professor</span>
+            </div>
+          </div>
+
+          <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema claro/escuro">
+            <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round">
+              <circle cx="12" cy="12" r="4" />
+              <path
+                d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+            </svg>
+            <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round">
+              <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z" />
+            </svg>
+            <span class="theme-toggle-label">Tema</span>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="content" id="content">
+
+      <div class="hero-banner">
+        <div class="hero-banner-media" aria-hidden="true" style="background-image: url('https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg');"></div>
+        <div class="hero-banner-overlay" aria-hidden="true"></div>
+        <div class="hero-banner-text">
+          <p class="hero-banner-kicker">Unidade de Aprendizagem 3</p>
+          <h2 class="hero-banner-title">A Ferramenta PPF</h2>
+        </div>
+      </div>
+
+      <header class="hero">
+        <p class="hero-kicker">Curso de Administração · Disciplina Estudos de Futuros</p>
+        <h1>O futuro nasce da tensão entre o que muda e o que permanece</h1>
+        <p class="hero-lede">Na Unidade 2, você aprendeu a captar sinais fracos — indícios ainda dispersos de
+          mudanças que podem se tornar relevantes. Mas um sinal fraco, sozinho, não conta uma história completa. Ele
+          sempre tem uma raiz no passado e sempre convive com elementos da organização que resistem à mudança. Esta
+          unidade apresenta o <strong>PPF (Passado, Presente e Futuro)</strong>, uma ferramenta construída a partir
+          de dois triângulos que se cruzam, que organiza qualquer fenômeno organizacional em cinco elementos e força
+          o analista a responder, ao mesmo tempo, "o que vai mudar?" e "o que não vai mudar, não importa o
+          cenário?".</p>
+        <p class="hero-hint">Use o menu ao lado para navegar entre as seções. O conteúdo acompanha a rolagem da
+          página.</p>
+      </header>
+
+      <section class="unit-section" id="passado-como-raiz" aria-labelledby="passado-como-raiz-title">
+        <p class="section-eyebrow">01 — Fundamentos</p>
+        <h2 id="passado-como-raiz-title">Por que Olhar para Trás para Pensar à Frente</h2>
+
+        <p>Pode parecer contraintuitivo que uma disciplina chamada "Estudos de Futuros" dedique tanto tempo ao
+          passado. Mas essa é, na verdade, uma característica estrutural do campo, não um desvio. Um estudo de
+          referência sobre prospecção de cenários na área da educação resume bem essa lógica: pensar o futuro é,
+          antes de mais nada, aprender a decifrar o presente a partir dos desafios historicamente acumulados — não é
+          possível projetar cenários plausíveis sem antes entender de onde as tensões atuais vêm (Thiesen, Garcez
+          &amp; Guimarães, 2014).</p>
+
+        <p>Essa ideia tem uma consequência prática direta para a gestão: quando uma organização projeta o futuro sem
+          examinar sua própria trajetória, ela corre dois riscos opostos e igualmente perigosos. O primeiro é
+          superestimar a ruptura — imaginar que tudo vai mudar, ignorando o que sua história mostra ser
+          estruturalmente resistente. O segundo é subestimá-la — assumir que o futuro será apenas uma extensão
+          linear do passado, ignorando os sinais fracos que já apontam para descontinuidades reais.</p>
+
+        <h3>Objetivos de aprendizagem desta unidade</h3>
+        <ul>
+          <li>Explicar por que a leitura do passado é pré-requisito metodológico para qualquer projeção séria de
+            futuro.</li>
+          <li>Descrever os cinco elementos do PPF e a lógica dos dois triângulos que se cruzam.</li>
+          <li>Diferenciar "mudança" de "permanência" ao analisar um mesmo fenômeno organizacional.</li>
+          <li>Aplicar o PPF para transformar um sinal fraco em um cenário de futuro plausível.</li>
+          <li>Situar o PPF dentro da tradição de Estudos de Futuros que trata continuidade e descontinuidade como
+            forças complementares, e não opostas.</li>
+        </ul>
+
+        <p class="reading-more">Saiba mais: <a
+            href="https://doaj.org/article/6809d39fe7cc4a2c9fa00c7107889768" target="_blank" rel="noopener">Prospecção
+            de cenários em educação: dos desafios do presente às possibilidades de futuro</a></p>
+      </section>
+
+      <section class="unit-section" id="continuidade-descontinuidade" aria-labelledby="continuidade-descontinuidade-title">
+        <p class="section-eyebrow">02 — Tradição Teórica</p>
+        <h2 id="continuidade-descontinuidade-title">A Tradição Teórica de Continuidade e Descontinuidade</h2>
+
+        <p>Essa tensão entre o que muda e o que permanece não é uma invenção pedagógica isolada — ela está no núcleo
+          teórico dos Estudos de Futuros como campo científico. Wendell Bell, em sua obra de referência
+          <em>Foundations of Futures Studies</em>, selecionada pela Association of Professional Futurists como uma
+          das dez obras mais importantes do campo, argumenta que uma das tarefas centrais da disciplina é justamente
+          identificar, entre os processos sociais observáveis, o que tende à continuidade e o que tende à mudança
+          (Bell, 1997).
+        </p>
+
+        <p>Jim Dator, um dos fundadores do programa de doutorado em Estudos de Futuros da Universidade do Havaí,
+          reforça essa mesma lógica a partir de outro ângulo: ao propor seus quatro futuros arquetípicos —
+          Continuidade, Colapso, Disciplina/Limites e Transformação —, Dator mostra que mesmo os cenários mais
+          radicais de ruptura (Colapso, Transformação) só fazem sentido quando comparados a um cenário-base de
+          Continuidade, que representa a extensão das tendências e estruturas já estabelecidas (Dator, 2009). Ou
+          seja: para imaginar a ruptura, é preciso primeiro entender bem o que está sendo rompido.</p>
+
+        <blockquote>O PPF opera exatamente dentro dessa tradição: ele não pergunta apenas "o que vai mudar?", mas
+          força o analista a responder, ao mesmo tempo, "o que não vai mudar, não importa o cenário?".</blockquote>
+      </section>
+
+      <section class="unit-section" id="apresentacao-ppf" aria-labelledby="apresentacao-ppf-title">
+        <p class="section-eyebrow">03 — A Ferramenta</p>
+        <h2 id="apresentacao-ppf-title">Apresentação da Ferramenta PPF</h2>
+
+        <p>O PPF é construído visualmente a partir de <strong>dois triângulos que se cruzam</strong>. Essa
+          construção não é apenas estética — ela representa uma ideia central: passado e futuro só fazem sentido
+          quando lidos a partir do presente, que é o ponto de interseção entre os dois triângulos. A ferramenta
+          organiza a análise em cinco elementos:</p>
+
+        <div class="case-list">
+          <article class="case-card">
+            <h3>1. Passado</h3>
+            <p>O que já aconteceu e explica por que estamos onde estamos hoje.</p>
+          </article>
+          <article class="case-card">
+            <h3>2. Presente (a interseção)</h3>
+            <p>O ponto de observação, onde passado e futuro se encontram e são interpretados.</p>
+          </article>
+          <article class="case-card">
+            <h3>3. Mudanças</h3>
+            <p>O que está se transformando; frequentemente, os sinais fracos de ontem ganhando corpo e
+              visibilidade.</p>
+          </article>
+          <article class="case-card">
+            <h3>4. Permanências</h3>
+            <p>O que resiste à mudança; o núcleo estável que se mantém independentemente do cenário.</p>
+          </article>
+          <article class="case-card">
+            <h3>5. Futuros</h3>
+            <p>Não <em>o</em> futuro, mas futuros plausíveis, construídos a partir da tensão entre mudança e
+              permanência.</p>
+          </article>
+        </div>
+
+        <p>Vale reforçar um ponto conceitual importante: o Presente, no PPF, não é um dado bruto e neutro. Ele é
+          sempre uma <strong>leitura</strong> — o ponto onde um analista, com seus critérios e sua bagagem, decide o
+          que do passado é relevante e o que do futuro parece plausível. Essa ideia de que a interpretação do
+          presente é sempre um ato ativo, e não uma simples constatação, está alinhada à noção de futuros plurais já
+          estudada na Unidade 1: não existe uma leitura única e objetiva do presente, assim como não existe um único
+          futuro.</p>
+      </section>
+
+      <section class="unit-section" id="elemento-passado" aria-labelledby="elemento-passado-title">
+        <p class="section-eyebrow">04 — Passado</p>
+        <h2 id="elemento-passado-title">Passado: a Raiz que Explica o Presente</h2>
+
+        <p>O primeiro passo prático do PPF é identificar os antecedentes históricos relevantes de um fenômeno atual.
+          Isso não significa fazer um levantamento histórico exaustivo — significa selecionar, entre os eventos
+          passados, aqueles que efetivamente ajudam a explicar por que a situação presente tomou a forma que
+          tomou.</p>
+
+        <p>Uma pergunta orientadora é útil aqui: <em>o que precisou acontecer antes para que este sinal ou esta
+            mudança fossem possíveis hoje?</em> Frequentemente, a resposta revela uma sequência de pequenos passos
+          técnicos, culturais ou regulatórios que, isoladamente, pareciam irrelevantes — mas que, somados, criaram as
+          condições para a mudança atual.</p>
+      </section>
+
+      <section class="unit-section" id="elemento-presente" aria-labelledby="elemento-presente-title">
+        <p class="section-eyebrow">05 — Presente</p>
+        <h2 id="elemento-presente-title">Presente como Ponto de Leitura, não como Dado Bruto</h2>
+
+        <p>Como já apontado na seção anterior, o presente no PPF não é uma fotografia neutra da realidade — é o
+          ponto de interseção onde o analista organiza o que enxerga do passado e do futuro. Isso tem uma implicação
+          prática importante para o trabalho em grupo: duas pessoas analisando o mesmo fenômeno organizacional, a
+          partir do mesmo conjunto de sinais fracos, podem chegar a leituras de presente diferentes — e isso não é
+          um erro metodológico, é uma característica esperada da ferramenta.</p>
+
+        <blockquote>É por isso que a aplicação do PPF costuma ser mais rica quando feita coletivamente, permitindo
+          confrontar diferentes leituras do mesmo presente antes de avançar para os cenários de futuro.</blockquote>
+      </section>
+
+      <section class="unit-section" id="elemento-mudancas" aria-labelledby="elemento-mudancas-title">
+        <p class="section-eyebrow">06 — Mudanças</p>
+        <h2 id="elemento-mudancas-title">Mudanças: o que a Tensão está Transformando</h2>
+
+        <p>Este é o elemento do PPF mais diretamente conectado ao trabalho já feito na Unidade 2. Os sinais fracos
+          que vocês aprenderam a captar são, frequentemente, a matéria-prima bruta do elemento "Mudanças" — mas nem
+          todo sinal fraco vira, automaticamente, uma mudança relevante dentro do PPF. O trabalho de preencher esse
+          elemento da ferramenta exige perguntar: <em>este sinal, se confirmado, altera de fato alguma estrutura,
+            processo ou comportamento central da organização, ou é um ruído passageiro?</em></p>
+      </section>
+
+      <section class="unit-section" id="elemento-permanencias" aria-labelledby="elemento-permanencias-title">
+        <p class="section-eyebrow">07 — Permanências</p>
+        <h2 id="elemento-permanencias-title">Permanências: o Núcleo que Resiste</h2>
+
+        <p>Se "Mudanças" tende a ser o elemento mais intuitivo do PPF (afinal, é sobre isso que a maior parte da
+          literatura de inovação fala), "Permanências" é o elemento mais frequentemente negligenciado — e, por isso
+          mesmo, o mais valioso. Toda organização tem um núcleo de elementos que resistem à mudança: pode ser uma
+          necessidade humana básica que o produto atende, uma competência técnica insubstituível, um valor cultural,
+          ou uma relação de confiança que nenhuma tecnologia consegue automatizar por completo.</p>
+
+        <p>Identificar corretamente as permanências evita um erro estratégico comum: abandonar, em nome da
+          inovação, aquilo que era exatamente a fonte da vantagem competitiva da organização.</p>
+      </section>
+
+      <section class="unit-section" id="elemento-futuros" aria-labelledby="elemento-futuros-title">
+        <p class="section-eyebrow">08 — Futuros</p>
+        <h2 id="elemento-futuros-title">Futuros Plausíveis: o Produto Final da Ferramenta</h2>
+
+        <p>O último elemento do PPF é a construção de um ou mais <strong>futuros plausíveis</strong> — não
+          previsões, mas cenários concretos e datados que decorrem logicamente da tensão entre o que muda e o que
+          permanece. Um bom cenário produzido a partir do PPF deve conseguir responder a duas perguntas: <em>qual
+            mudança este cenário assume como já consolidada?</em> e <em>qual permanência este cenário ainda
+            preserva?</em>.</p>
+
+        <blockquote>Um cenário que ignora completamente as permanências identificadas tende a soar como ficção
+          científica; um cenário que ignora completamente as mudanças tende a soar como mera repetição do
+          presente.</blockquote>
+      </section>
+
+      <section class="unit-section" id="anatomia-ppf" aria-labelledby="anatomia-ppf-title">
+        <p class="section-eyebrow">09 — Anatomia da Ferramenta</p>
+        <h2 id="anatomia-ppf-title">Anatomia da Ferramenta PPF</h2>
+
+        <p>Na prática, a aplicação do PPF começa por nomear o <strong>evento ou tema</strong> em análise e, a
+          partir dele, preencher os cinco campos dispostos ao redor dos dois triângulos que se cruzam. Cada campo
+          vem acompanhado de perguntas orientadoras que ajudam o grupo a não deslizar de um elemento para outro sem
+          perceber: à esquerda, o <strong>Passado</strong> pergunta o que aconteceu e quais eventos transformaram a
+          trajetória até aqui; no centro, onde os triângulos se cruzam, o <strong>Presente</strong> pergunta apenas
+          o que está acontecendo agora; acima, as <strong>Mudanças</strong> perguntam o que se modificou
+          drasticamente entre o passado e o presente; abaixo, as <strong>Permanências</strong> perguntam o que não
+          mudou, mesmo com todo o resto em transformação; e à direita, o <strong>Futuro</strong> pergunta o que se
+          gostaria de alcançar e o que provavelmente acontecerá. É essa disposição espacial — Passado e Futuro nas
+          pontas, Mudanças e Permanências nas bordas superior e inferior, Presente no meio — que dá nome à
+          ferramenta e que obriga o analista a preencher os cinco campos antes de tirar qualquer conclusão.</p>
+
+        <figure class="unit-figure unit-figure--wide">
+          <img class="unit-figure__image" src="img/ppf.jpg"
+            alt="Diagrama da ferramenta PPF: dois triângulos que se cruzam, com os campos Passado, Presente, Mudanças, Permanências e Futuro, cada um acompanhado de perguntas orientadoras.">
+        </figure>
+
+        <h3>Exemplo aplicado: monitoramento contínuo via wearables</h3>
+        <p>Um tema que ilustra bem o preenchimento da ferramenta é o do <strong>monitoramento contínuo de saúde via
+            wearables</strong> — relógios e anéis inteligentes que hoje medem frequência cardíaca, saturação de
+          oxigênio, variabilidade cardíaca e padrões de sono de forma ininterrupta, e já emitem alertas de possíveis
+          arritmias. O Passado remonta ao exame clínico pontual e ao surgimento do Holter nas décadas de 1960-1980,
+          passando pela popularização de smartphones e dos primeiros wearables de consumo nos anos 2000. A Mudança
+          central é a passagem de um modelo de consulta reativa ("vim porque senti algo") para um modelo
+          preditivo e contínuo ("o dispositivo detectou uma alteração antes do sintoma"), o que também empurra a
+          fronteira regulatória entre "dispositivo de consumo" e "dispositivo médico". Já as Permanências mostram
+          que o julgamento clínico continua insubstituível — dado bruto não é diagnóstico — e que o corpo humano
+          segue sendo a fonte última da verdade, com o dispositivo medindo uma variável, não substituindo o exame
+          físico e a anamnese. O Futuro projetado é o de um médico que desloca seu papel de "pedir o exame certo"
+          para "interpretar ruído versus sinal real" em fluxos contínuos de dados.</p>
+
+        <figure class="unit-figure unit-figure--wide">
+          <img class="unit-figure__image" src="img/ppf-exemplo.png"
+            alt="Exemplo preenchido da ferramenta PPF aplicada ao tema Monitoramento Contínuo via Wearables, com anotações em Passado, Mudanças, Permanências e Futuro.">
+        </figure>
+      </section>
+
+      <section class="unit-section" id="exemplos-aplicados" aria-labelledby="exemplos-aplicados-title">
+        <p class="section-eyebrow">10 — Aplicações</p>
+        <h2 id="exemplos-aplicados-title">Exemplos Aplicados</h2>
+
+        <p>Os três casos a seguir mostram como o mesmo raciocínio do PPF — cruzar Passado, Mudanças e Permanências
+          para chegar a Futuros plausíveis — se aplica a setores bem diferentes.</p>
+
+        <div class="case-list">
+          <article class="case-card">
+            <h3>Varejo</h3>
+            <p>Uma loja física tradicional aplica o PPF ao sinal fraco "crescimento do live commerce" — Passado
+              (democratização de redes sociais e criadores de conteúdo), Mudanças (compra por impulso mediada por
+              influenciadores), Permanências (a necessidade humana de confiar em uma recomendação antes de comprar),
+              Futuros (atendentes de loja se tornando também apresentadores de vendas ao vivo).</p>
+          </article>
+          <article class="case-card">
+            <h3>Educação corporativa</h3>
+            <p>Uma área de T&amp;D aplica o PPF ao sinal fraco "uso de IA generativa para treinamentos
+              personalizados" — Passado (e-learning padronizado dos anos 2000), Mudanças (trilhas de aprendizagem
+              adaptativas), Permanências (a necessidade de prática supervisionada para consolidar competências
+              complexas), Futuros (tutores de IA como complemento, não substituto, de mentores humanos).</p>
+          </article>
+          <article class="case-card">
+            <h3>Serviços financeiros</h3>
+            <p>Um banco tradicional aplica o PPF ao sinal fraco "crescimento de comunidades de investidores em redes
+              sociais" — Passado (agências físicas como único canal de orientação financeira), Mudanças
+              (descentralização da informação sobre investimentos), Permanências (a necessidade de confiança
+              institucional em momentos de crise), Futuros (bancos atuando como curadores de informação, não mais
+              como únicos detentores dela).</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="unit-section" id="caso-netflix" aria-labelledby="caso-netflix-title">
+        <p class="section-eyebrow">11 — Estudo de Caso</p>
+        <h2 id="caso-netflix-title">Caso Real Aplicado: a Trajetória da Netflix Lida pelo PPF</h2>
+
+        <p>Para ilustrar a ferramenta com um caso real e bem documentado, vamos aplicar o PPF à trajetória da
+          Netflix — deixando claro que esta é uma leitura nossa, construída com a ferramenta, e não uma análise que
+          a própria empresa tenha nomeado dessa forma.</p>
+
+        <p><strong>Passado:</strong> a Netflix foi fundada em 1997 por Reed Hastings e Marc Randolph, na Califórnia,
+          como um serviço de aluguel de DVDs pelo correio, sem cobrança de multas por atraso — uma inovação direta
+          em relação ao modelo das locadoras físicas tradicionais, como a então dominante Blockbuster (Exame, 2025;
+          Dry Telecom, 2025). Em 2000, a Netflix chegou a oferecer uma parceria à Blockbuster por 50 milhões de
+          dólares; a proposta foi recusada, em um episódio hoje frequentemente citado como um dos maiores erros
+          corporativos da história (Dry Telecom, 2025).</p>
+
+        <p><strong>Presente (interseção):</strong> a Netflix hoje é lida, simultaneamente, como uma empresa de
+          tecnologia, uma distribuidora global de conteúdo e um estúdio de produção original — uma identidade
+          múltipla que só faz sentido quando olhamos para a trajetória que a formou.</p>
+
+        <p><strong>Mudanças:</strong> em 2007, a empresa lançou seu serviço de streaming, eliminando a dependência
+          da logística física de envio de DVDs. Em 2013, deu um segundo salto estrutural, passando de distribuidora
+          de conteúdo de terceiros para produtora de conteúdo original, com o lançamento de <em>House of
+            Cards</em> (Diário de Séries, 2024). Cada uma dessas mudanças exigiu abandonar um modelo de negócio que,
+          no momento anterior, era a própria razão do sucesso da empresa.</p>
+
+        <p><strong>Permanências:</strong> apesar das rupturas de modelo de negócio, um elemento central nunca mudou
+          desde 1997: a proposta de eliminar fricção no acesso ao entretenimento — primeiro, ao eliminar as multas
+          por atraso das locadoras físicas; depois, ao eliminar a espera pelo correio; por fim, ao eliminar a
+          necessidade de esperar por um estúdio externo para produzir o conteúdo desejado pelo público. A
+          permanência não é o formato (DVD, streaming, produção própria) — é a promessa de conveniência e controle
+          do consumidor sobre o próprio consumo.</p>
+
+        <p><strong>Futuros:</strong> a leitura da tensão entre essas mudanças e essa permanência sugere um cenário
+          plausível de continuidade da mesma lógica: novas fricções na experiência de entretenimento (como formatos
+          rígidos e não-interativos) tendem a ser os próximos alvos de eliminação, o que já se reflete em
+          experimentações da empresa com conteúdo interativo e personalização cada vez mais sofisticada via
+          algoritmos de recomendação.</p>
+
+        <p>Esse exercício mostra como o PPF evita duas leituras simplistas e igualmente erradas sobre a Netflix: a
+          de que ela é "apenas uma empresa de tecnologia que sempre se reinventou do zero" (ignora a permanência que
+          sustenta todas as reinvenções) ou a de que ela é "apenas uma locadora de DVD que teve sorte" (ignora as
+          mudanças estruturais reais que ela promoveu).</p>
+
+        <p class="reading-more">Saiba mais: <a
+            href="https://exame.com/casual/como-a-netflix-foi-do-dvd-porta-a-porta-a-dominacao-global-do-entretenimento/"
+            target="_blank" rel="noopener">Como a Netflix foi do DVD porta a porta à dominação global do
+            entretenimento</a></p>
+      </section>
+
+      <section class="unit-section" id="ferramentas-correlatas" aria-labelledby="ferramentas-correlatas-title">
+        <p class="section-eyebrow">12 — Tradição Metodológica</p>
+        <h2 id="ferramentas-correlatas-title">PPF e Ferramentas Correlatas</h2>
+
+        <p>O PPF não é uma invenção isolada — ele pertence a uma família mais ampla de métodos de Estudos de Futuros
+          que organizam a análise em torno da tensão entre três tempos. O parente mais documentado dessa família é o
+          <strong>Triângulo de Futuros</strong>, desenvolvido pelo futurista Sohail Inayatullah a partir de um
+          workshop realizado em 1997 na Southern Cross University, na Austrália, e formalmente batizado nesse nome
+          em 2003 (Inayatullah, 2023).
+        </p>
+
+        <p>O Triângulo de Futuros mapeia três forças em tensão: o <strong>peso do passado</strong> (<em>weight of
+            history</em>), o <strong>empurrão do presente</strong> (<em>push of the present</em>) e o
+          <strong>puxão do futuro</strong> (<em>pull of the future</em>) — fatores observáveis que, juntos, delimitam
+          o espaço de futuros plausíveis para um determinado tema (Riedy, 2012; Inayatullah, 2023). A lógica é irmã
+          da do PPF: nenhum dos três tempos, isoladamente, determina o futuro — é a tensão entre eles que produz o
+          espaço de possibilidades.
+        </p>
+
+        <p>Essa aproximação teórica não diminui a originalidade do PPF como ferramenta de ensino — pelo contrário,
+          mostra que a intuição pedagógica por trás dele (organizar a leitura do presente a partir da tensão entre
+          continuidade e mudança) está ancorada em uma tradição metodológica sólida e amplamente validada no campo
+          de Estudos de Futuros.</p>
+
+        <p class="reading-more">Saiba mais: <a
+            href="https://www.metafuture.org/wp-content/uploads/2024/06/futures-triangle-origins-and-interations.pdf"
+            target="_blank" rel="noopener">The Futures Triangle: Origins and Iterations (Inayatullah, 2023)</a> ·
+          <a href="https://www.strategicforesight.es/blog/el-triangulo-de-futuros/" target="_blank"
+            rel="noopener">El Triángulo de Futuros</a> · <a href="https://medium.com/@chrisjriedy/the-futures-triangle-7ef2ed728a02"
+            target="_blank" rel="noopener">The futures triangle (Riedy, 2012)</a>
+        </p>
+      </section>
+
+      <section class="unit-section unit-section--video" id="video-ppf" aria-labelledby="video-ppf-title">
+        <p class="section-eyebrow">13 — Vídeo</p>
+        <h2 id="video-ppf-title">Vídeo</h2>
+
+        <p><strong>"2.9 Prática de Passado, Presente e Futuros [PPF]"</strong> — vídeo da Escola Brasileira de
+          Futuros que retoma, de forma didática, a aplicação prática da ferramenta apresentada nesta unidade.</p>
+
+        <div class="video-embed" data-youtube-id="If_SPX9VnOs"
+          aria-label="Player de vídeo: Prática de Passado, Presente e Futuros [PPF]">
+          <button class="video-play" type="button" aria-label="Reproduzir vídeo">
+            <span class="video-play-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </span>
+            <span class="video-play-text">Reproduzir vídeo</span>
+          </button>
+          <p class="video-config-note">2.9 Prática de Passado, Presente e Futuros [PPF] — Escola Brasileira de
+            Futuros</p>
+        </div>
+
+        <p class="reading-more">Saiba mais: <a href="https://youtu.be/If_SPX9VnOs" target="_blank"
+            rel="noopener">Assistir no YouTube</a></p>
+      </section>
+
+      <section class="unit-section" id="referencias" aria-labelledby="referencias-title">
+        <p class="section-eyebrow">14 — Bibliografia</p>
+        <h2 id="referencias-title">Referências</h2>
+
+        <ul>
+          <li>BELL, Wendell. <em>Foundations of Futures Studies: Human Science for a New Era.</em> Volume 1:
+            History, Purposes, and Knowledge. New Brunswick, NJ: Transaction Publishers, 1997.</li>
+          <li>BELL, Wendell. <em>Foundations of Futures Studies: Human Science for a New Era.</em> Volume 2: Values,
+            Objectivity, and the Good Society. New Brunswick, NJ: Transaction Publishers, 1997.</li>
+          <li>DATOR, Jim (Ed.). <em>Advancing Futures: Futures Studies in Higher Education.</em> Westport, CT:
+            Praeger, 2002.</li>
+          <li>DATOR, Jim. "Alternative Futures at the Manoa School." <em>Journal of Futures Studies</em>, v. 14, n.
+            2, 2009, p. 1-18.</li>
+          <li>DIÁRIO DE SÉRIES. <em>Conheça a história da Netflix, de locadora de DVDs a streaming</em>. 2024. <a
+              href="https://diariodeseries.com.br/conheca-a-historia-da-netflix-de-locadora-de-dvd-a-gigante-do-streaming/"
+              target="_blank" rel="noopener">Disponível aqui</a>.</li>
+          <li>DRY TELECOM. <em>A História do Netflix: De Locadora de DVD ao Império do Streaming</em>. 2025. <a
+              href="https://drytelecom.com.br/artigo/a-histria-do-netflix-de-locadora-de-dvd-ao-imprio-do-streaming"
+              target="_blank" rel="noopener">Disponível aqui</a>.</li>
+          <li>EXAME. <em>Como a Netflix foi do DVD porta a porta à dominação global do entretenimento</em>. 2025.
+            <a href="https://exame.com/casual/como-a-netflix-foi-do-dvd-porta-a-porta-a-dominacao-global-do-entretenimento/"
+              target="_blank" rel="noopener">Disponível aqui</a>.</li>
+          <li>INAYATULLAH, Sohail. "The Futures Triangle: Origins and Iterations." <em>World Futures Review</em>, v.
+            15, 2023, p. 112-121. <a
+              href="https://www.metafuture.org/wp-content/uploads/2024/06/futures-triangle-origins-and-interations.pdf"
+              target="_blank" rel="noopener">Disponível aqui</a>.</li>
+          <li>RIEDY, Chris. "The futures triangle." <em>Medium</em>, 2012. <a
+              href="https://medium.com/@chrisjriedy/the-futures-triangle-7ef2ed728a02" target="_blank"
+              rel="noopener">Disponível aqui</a>.</li>
+          <li>THIESEN, Juares da Silva; GARCEZ, Eliane Fioravante; GUIMARÃES, Joice Eloi. "Prospecção de cenários em
+            educação: dos desafios do presente às possibilidades de futuro." <em>Revista Ibero-Americana de Estudos
+              em Educação</em>, v. 9, n. 1, 2014, p. 177-193. <a
+              href="https://doaj.org/article/6809d39fe7cc4a2c9fa00c7107889768" target="_blank"
+              rel="noopener">Disponível aqui</a>.</li>
+        </ul>
+      </section>
+
+      <footer class="unit-footer">
+        <p>Unidade 3 — A Ferramenta PPF (Passado, Presente e Futuro) · Curso de Administração · Material de apoio
+          para uso em disciplina EAD.</p>
+      </footer>
+
+    </main>
+  </div>
+
+  <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 15l-6-6-6 6" />
+    </svg>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

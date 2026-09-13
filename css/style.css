@@ -1028,6 +1028,37 @@ blockquote p:last-child {
   color: var(--color-text);
 }
 
+/* ---------- Generic diagram figure ---------- */
+.unit-figure {
+  margin: 1.6rem 0;
+}
+
+.unit-figure__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: #ffffff;
+}
+
+/* Breaks out of the 700px text column on wide viewports so dense
+   diagrams stay legible. The calc below fills exactly the content
+   area's padding box (sidebar width 288px + 2 * content pad-x 3rem),
+   so it never overflows past the sidebar or the viewport edge. */
+.unit-figure--wide .unit-figure__image {
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1085px) {
+  .unit-figure--wide {
+    width: calc(100vw - 384px);
+    margin-left: calc(542px - 50vw);
+  }
+}
+
 /* ---------- Footer ---------- */
 .unit-footer {
   max-width: var(--content-max-width);
