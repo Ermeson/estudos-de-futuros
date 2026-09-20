@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudos de Futuros · Unidade de Aprendizagem</title>
+    <meta name="description"
+        content="Unidade 4: Análise PESTEL — origem no modelo de Francis Aguilar, as seis dimensões (Política, Econômica, Social, Tecnológica, Ambiental, Legal), diferença em relação à SWOT e o caso da regulamentação das apostas esportivas (bets) no Brasil.">
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='38' fill='none' stroke='%232b6e63' stroke-width='7'/%3E%3Cpath d='M50 20 L50 50 L68 62' fill='none' stroke='%232b6e63' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir navegação" aria-expanded="false"
+        aria-controls="sidebar">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="nav-backdrop" id="navBackdrop"></div>
+
+    <div class="text-size-controls" role="group" aria-label="Ajustar tamanho do texto">
+        <button class="text-size-btn text-size-btn--decrease" id="textSizeDecrease" type="button"
+            aria-label="Diminuir tamanho do texto">
+            <span class="text-size-icon" aria-hidden="true">A<sup>−</sup></span>
+        </button>
+        <button class="text-size-btn text-size-btn--increase" id="textSizeIncrease" type="button"
+            aria-label="Aumentar tamanho do texto">
+            <span class="text-size-icon" aria-hidden="true">A<sup>+</sup></span>
+        </button>
+    </div>
+
+    <div class="layout">
+
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-inner">
+                <div class="brand-logo">
+                    <img src="img/logo-unifap.svg" alt="Logotipo UNIFAP" width="132" height="33" loading="eager">
+                </div>
+
+                <div class="brand">
+                    <span class="brand-mark" aria-hidden="true">
+                        <svg viewBox="0 0 100 100" width="26" height="26">
+                            <circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="7" />
+                            <path d="M50 20 L50 50 L68 62" fill="none" stroke="currentColor" stroke-width="7"
+                                stroke-linecap="round" />
+                        </svg>
+                    </span>
+                    <div class="brand-text">
+                        <span class="brand-title">Estudos de Futuros</span>
+                        <span class="brand-subtitle">Unidade 4 · Análise PESTEL</span>
+                    </div>
+                </div>
+
+                <button class="sidebar-collapse" id="sidebarCollapse" aria-label="Recolher menu" aria-expanded="true"
+                    aria-controls="sidebar">
+                    <svg class="collapse-icon" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <path d="M15 18l-6-6 6-6" />
+                    </svg>
+                    <span class="sidebar-collapse-label">Recolher menu</span>
+                </button>
+
+                <nav class="toc" aria-label="Sumário da unidade">
+                    <ol id="tocList">
+                        <li><a href="#olhar-para-fora" data-index="01"><span class="toc-index">01</span><span
+                                    class="toc-label">Olhar para Fora Antes de Dentro</span></a></li>
+                        <li><a href="#origem-aguilar" data-index="02"><span class="toc-index">02</span><span
+                                    class="toc-label">De ETPS a PESTEL: a Origem</span></a></li>
+                        <li><a href="#seis-dimensoes" data-index="03"><span class="toc-index">03</span><span
+                                    class="toc-label">As Seis Dimensões</span></a></li>
+                        <li><a href="#pestel-nao-e-swot" data-index="04"><span class="toc-index">04</span><span
+                                    class="toc-label">PESTEL não é SWOT</span></a></li>
+                        <li><a href="#como-aplicar" data-index="05"><span class="toc-index">05</span><span
+                                    class="toc-label">Como Aplicar na Prática</span></a></li>
+                        <li><a href="#conexoes-entre-fatores" data-index="06"><span class="toc-index">06</span><span
+                                    class="toc-label">O Poder das Conexões</span></a></li>
+                        <li><a href="#limites-armadilhas" data-index="07"><span class="toc-index">07</span><span
+                                    class="toc-label">Limites e Armadilhas</span></a></li>
+                        <li><a href="#ponto-de-partida" data-index="08"><span class="toc-index">08</span><span
+                                    class="toc-label">Ponto de Partida para Futuros</span></a></li>
+                        <li><a href="#exemplos-aplicados" data-index="09"><span class="toc-index">09</span><span
+                                    class="toc-label">Exemplos Aplicados</span></a></li>
+                        <li><a href="#caso-bets" data-index="10"><span class="toc-index">10</span><span
+                                    class="toc-label">Caso Real: as Bets no Brasil</span></a></li>
+                        <li><a href="#video-pestel" data-index="11"><span class="toc-index">11</span><span
+                                    class="toc-label">Vídeo</span></a></li>
+                        <li><a href="#referencias" data-index="12"><span class="toc-index">12</span><span
+                                    class="toc-label">Referências</span></a></li>
+                    </ol>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <div class="user-card">
+                        <img class="user-avatar" src="https://avatars.githubusercontent.com/u/4398869"
+                            alt="Foto de Ermeson Silva" width="36" height="36" loading="lazy">
+                        <div class="user-info">
+                            <span class="user-name">Ermeson Silva</span>
+                            <span class="user-role">Professor</span>
+                        </div>
+                    </div>
+
+                    <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema claro/escuro">
+                        <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                            <circle cx="12" cy="12" r="4" />
+                            <path
+                                d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+                        </svg>
+                        <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                            <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z" />
+                        </svg>
+                        <span class="theme-toggle-label">Tema</span>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <main class="content" id="content">
+
+            <div class="hero-banner">
+                <div class="hero-banner-media" aria-hidden="true"
+                    style="background-image: url('https://images.pexels.com/photos/18337612/pexels-photo-18337612.jpeg');">
+                </div>
+                <div class="hero-banner-overlay" aria-hidden="true"></div>
+                <div class="hero-banner-text">
+                    <p class="hero-banner-kicker">Unidade de Aprendizagem 4</p>
+                    <h2 class="hero-banner-title">A Análise PESTEL</h2>
+                </div>
+            </div>
+
+            <header class="hero">
+                <p class="hero-kicker">Curso de Administração · Disciplina Estudos de Futuros</p>
+                <h1>Antes de mudar qualquer coisa, você sabe descrever o ambiente em que está inserido</h1>
+                <p class="hero-lede">Até aqui, este curso deu a você ferramentas para lidar com o futuro em momentos
+                    bem específicos: captar os primeiros sinais de mudança, situar uma mudança na tensão entre
+                    passado e futuro, mapear os efeitos em cadeia de um evento. Mas existe uma pergunta ainda mais
+                    básica, que normalmente vem antes de todas essas. É essa pergunta que a <strong>Análise
+                        PESTEL</strong> ajuda a responder: uma das ferramentas mais usadas em todo o mundo da gestão
+                    estratégica, criada para organizar, de forma sistemática, as forças externas que uma organização
+                    não controla, mas que moldam o espaço dentro do qual ela toma decisões — agrupadas em seis
+                    dimensões: Política, Econômica, Social, Tecnológica, Ambiental e Legal.
+                </p>
+                <p class="hero-hint">Use o menu ao lado para navegar entre as seções. O conteúdo acompanha a rolagem
+                    da página.</p>
+            </header>
+
+            <section class="unit-section" id="olhar-para-fora" aria-labelledby="olhar-para-fora-title">
+                <p class="section-eyebrow">01 · Fundamentos</p>
+                <h2 id="olhar-para-fora-title">Por que Olhar para Fora Antes de Olhar para Dentro</h2>
+
+                <p>Um erro comum em gestão é começar o planejamento estratégico olhando primeiro para dentro da
+                    própria organização — seus produtos, sua equipe, seus processos — e só depois, quase como um
+                    detalhe, dar uma olhada rápida no que está acontecendo lá fora. A Análise PESTEL propõe o caminho
+                    inverso: antes de decidir qualquer coisa sobre a organização, é preciso primeiro entender bem o
+                    ambiente em que ela está inserida, porque é esse ambiente que define, em grande parte, quais
+                    estratégias fazem sentido e quais não fazem.</p>
+
+                <p>Essa lógica já apareceu de forma indireta na Unidade 2 deste curso, quando você aprendeu sobre
+                    monitoramento ambiental como um processo contínuo de observar o que se passa fora da organização.
+                    A PESTEL pode ser vista como uma forma de organizar esse olhar para fora em seis categorias
+                    claras, evitando que a análise fique dispersa ou incompleta.</p>
+
+                <h3>Objetivos de aprendizagem desta unidade</h3>
+                <ul>
+                    <li>Definir o que é a Análise PESTEL e explicar sua origem histórica, a partir do modelo criado
+                        por Francis Aguilar.</li>
+                    <li>Descrever cada uma das seis dimensões da PESTEL, com exemplos concretos de cada uma.</li>
+                    <li>Diferenciar a PESTEL de outras ferramentas próximas, como a SWOT, entendendo o papel específico
+                        de cada uma.</li>
+                    <li>Identificar como diferentes forças externas podem se conectar entre si dentro de um mesmo
+                        fenômeno.</li>
+                    <li>Reconhecer os limites da ferramenta e boas práticas para evitar uma análise rasa ou genérica.
+                    </li>
+                </ul>
+            </section>
+
+            <section class="unit-section" id="origem-aguilar" aria-labelledby="origem-aguilar-title">
+                <p class="section-eyebrow">02 · Origens</p>
+                <h2 id="origem-aguilar-title">De ETPS a PESTEL: a Origem da Ferramenta</h2>
+
+                <p>A base da Análise PESTEL vem do trabalho do professor <strong>Francis J. Aguilar</strong>, da
+                    Harvard Business School, que em 1967 publicou o livro <em>Scanning the Business Environment</em>
+                    — um dos primeiros textos a propor um método sistemático para que as organizações observassem seu
+                    ambiente externo (Aguilar, 1967, citado em RapidBI, s.d.). Curiosamente, a sigla original de
+                    Aguilar não era PEST: ele usava <strong>ETPS</strong>, sigla para os quatro fatores que
+                    identificou — Econômico, Técnico, Político e Social (RapidBI, s.d.; ResumoCast, 2026).</p>
+
+                <p>Nas décadas seguintes, diferentes autores reorganizaram essa sigla original de várias formas —
+                    passando por versões como STEP e STEPE — até que ela se estabilizasse como <strong>PEST</strong>
+                    (Político, Econômico, Social, Tecnológico), por ser mais fácil de pronunciar e lembrar (PESTLE
+                    Analysis, 2024). Mais tarde, duas novas dimensões foram incorporadas: <strong>Ambiental</strong>,
+                    refletindo a crescente importância das questões de sustentabilidade, e <strong>Legal</strong>,
+                    capturando o peso cada vez maior das obrigações regulatórias — formando o modelo
+                    <strong>PESTEL</strong> (ou PESTLE, com a mesma ordem trocada) que usamos hoje (Global Advisors,
+                    2026).
+                </p>
+
+                <blockquote>Vale registrar algo interessante sobre essa evolução: PESTEL e PESTLE representam
+                    exatamente as mesmas seis dimensões, apenas em ordens diferentes — a diferença é puramente de
+                    nomenclatura e não tem nenhum peso analítico (Global Advisors, 2026).</blockquote>
+
+                <p class="reading-more">Saiba mais: <a href="https://rapidbi.com/history-of-pest-analysis/"
+                        target="_blank" rel="noopener">History of PEST analysis (RapidBI)</a> · <a
+                        href="https://pestleanalysis.com/who-invented-pest-analysis/" target="_blank" rel="noopener">Who
+                        Invented PEST Analysis And Why It Matters (PESTLE Analysis, 2024)</a></p>
+            </section>
+
+            <section class="unit-section" id="seis-dimensoes" aria-labelledby="seis-dimensoes-title">
+                <p class="section-eyebrow">03 · A Ferramenta</p>
+                <h2 id="seis-dimensoes-title">As Seis Dimensões da PESTEL, uma a uma</h2>
+
+                <p>Vamos apresentar cada dimensão com um exemplo simples, para que a lógica fique clara desde já:</p>
+
+                <div class="method-grid">
+                    <article class="method-card">
+                        <h3>Político</h3>
+                        <p>Engloba decisões de governo, estabilidade política, políticas de incentivo ou restrição a
+                            determinados setores. Uma mudança na política de subsídios para empresas estrangeiras pode
+                            travar, da noite para o dia, um plano de expansão já em andamento (Mereo, 2026).</p>
+                    </article>
+                    <article class="method-card">
+                        <h3>Econômico</h3>
+                        <p>Envolve inflação, câmbio, juros, nível de emprego e crescimento econômico de forma mais
+                            ampla. Uma empresa que vende produtos importados, por exemplo, é diretamente afetada por
+                            variações na taxa de câmbio.</p>
+                    </article>
+                    <article class="method-card">
+                        <h3>Social</h3>
+                        <p>Trata de mudanças demográficas, comportamento do consumidor, valores culturais e estilo de
+                            vida da população. A ascensão de uma nova geração de consumidores com hábitos de consumo
+                            diferentes é um exemplo clássico (Mereo, 2026).</p>
+                    </article>
+                    <article class="method-card">
+                        <h3>Tecnológico</h3>
+                        <p>Cobre inovações, automação, digitalização e novas tecnologias emergentes que podem tanto
+                            ameaçar quanto abrir oportunidades para um negócio.</p>
+                    </article>
+                    <article class="method-card">
+                        <h3>Ambiental</h3>
+                        <p>Envolve questões de sustentabilidade, mudanças climáticas, regulação ambiental e a pressão
+                            crescente de consumidores e investidores por práticas mais responsáveis.</p>
+                    </article>
+                    <article class="method-card">
+                        <h3>Legal</h3>
+                        <p>Abrange leis específicas que afetam a operação de um negócio — proteção ao consumidor,
+                            legislação trabalhista, regras de concorrência, entre outras (Desk Manager, 2024).</p>
+                    </article>
+                </div>
+
+                <p>É importante deixar claro que nem toda análise vai encontrar peso equivalente nas seis dimensões.
+                    Em alguns casos, um fator ambiental pode ser irrelevante para determinado negócio, enquanto o
+                    fator legal domina completamente a análise. Isso não é um erro — é justamente o que a ferramenta
+                    deveria revelar.</p>
+            </section>
+
+            <section class="unit-section" id="pestel-nao-e-swot" aria-labelledby="pestel-nao-e-swot-title">
+                <p class="section-eyebrow">04 · Distinções</p>
+                <h2 id="pestel-nao-e-swot-title">PESTEL não é SWOT</h2>
+
+                <p>É comum que alunos confundam a PESTEL com a SWOT (Forças, Fraquezas, Oportunidades e Ameaças), já
+                    que as duas são ferramentas de análise estratégica frequentemente usadas juntas. A diferença
+                    central é o escopo: a PESTEL analisa <strong>exclusivamente o ambiente externo</strong> — o que
+                    está fora do controle direto da organização —, enquanto a SWOT combina fatores externos
+                    (Oportunidades e Ameaças) com fatores internos (Forças e Fraquezas) (Mereo, 2026).</p>
+
+                <p>Na prática, essas ferramentas costumam funcionar em sequência: primeiro se aplica a PESTEL para
+                    mapear com profundidade o ambiente externo, e depois se usam esses achados para alimentar, de
+                    forma mais rica e fundamentada, a coluna de Oportunidades e Ameaças de uma análise SWOT
+                    (ResumoCast, 2026). A PESTEL, sozinha, não avalia a capacidade da organização de responder a esse
+                    ambiente — só descreve o ambiente em si.</p>
+
+                <p class="reading-more">Saiba mais: <a href="https://mereo.com/hub/analise-pestel/" target="_blank"
+                        rel="noopener">Análise PESTEL: o que é, como fazer e exemplos práticos (Mereo, 2026)</a></p>
+            </section>
+
+            <section class="unit-section" id="como-aplicar" aria-labelledby="como-aplicar-title">
+                <p class="section-eyebrow">05 · Processo</p>
+                <h2 id="como-aplicar-title">Como Aplicar a PESTEL na Prática</h2>
+
+                <p>O processo de construção de uma Análise PESTEL costuma seguir alguns passos simples:</p>
+
+                <ol class="steps-list">
+                    <li>
+                        <span class="step-number">1</span>
+                        <div class="step-body">
+                            <h3>Delimitar claramente o objeto de análise</h3>
+                            <p>Um setor, uma empresa, um mercado ou uma decisão específica.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="step-number">2</span>
+                        <div class="step-body">
+                            <h3>Levantar fatores relevantes em cada uma das seis dimensões</h3>
+                            <p>Buscando informações atualizadas sobre política, economia, sociedade, tecnologia, meio
+                                ambiente e legislação que possam afetar esse objeto.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="step-number">3</span>
+                        <div class="step-body">
+                            <h3>Avaliar a probabilidade e o impacto de cada fator identificado</h3>
+                            <p>Já que nem todo fator levantado tem o mesmo peso estratégico (Desk Manager, 2024).</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="step-number">4</span>
+                        <div class="step-body">
+                            <h3>Priorizar os fatores mais relevantes</h3>
+                            <p>Evitando o erro de tratar uma lista longa e genérica como se todos os itens tivessem a
+                                mesma importância.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="step-number">5</span>
+                        <div class="step-body">
+                            <h3>Revisar a análise periodicamente</h3>
+                            <p>O ambiente externo muda, e uma PESTEL feita há dois anos pode já não refletir a
+                                realidade atual (BSC Designer, 2025, sugere revisões a cada 6 a 12 meses).</p>
+                        </div>
+                    </li>
+                </ol>
+
+                <p class="reading-more">Saiba mais: <a href="https://www.deskmanager.com.br/blog/analise-pestel/"
+                        target="_blank" rel="noopener">Análise Pestel: o que é, exemplos e como fazer (Desk Manager,
+                        2024)</a> · <a href="https://bscdesigner.com/pt/pestel-analysis.htm" target="_blank"
+                        rel="noopener">Um exemplo de uso do modelo PESTEL (BSC Designer, 2025)</a></p>
+            </section>
+
+            <section class="unit-section" id="conexoes-entre-fatores" aria-labelledby="conexoes-entre-fatores-title">
+                <p class="section-eyebrow">06 · Análise</p>
+                <h2 id="conexoes-entre-fatores-title">O Poder das Conexões entre Fatores</h2>
+
+                <p>Uma boa Análise PESTEL não trata as seis dimensões como caixas isoladas — o verdadeiro valor da
+                    ferramenta aparece quando conseguimos enxergar como diferentes fatores se conectam dentro de um
+                    mesmo fenômeno. Uma mudança tecnológica, por exemplo, quase sempre puxa consigo uma resposta legal
+                    (nova regulação) e, dependendo do caso, também uma reação social (mudança de comportamento do
+                    consumidor) e econômica (novos modelos de receita). Veremos isso de forma bem concreta no caso
+                    real desta unidade, que atravessa praticamente todas as seis dimensões ao mesmo tempo.</p>
+            </section>
+
+            <section class="unit-section" id="limites-armadilhas" aria-labelledby="limites-armadilhas-title">
+                <p class="section-eyebrow">07 · Cuidados</p>
+                <h2 id="limites-armadilhas-title">Limites e Armadilhas Comuns</h2>
+
+                <p>A simplicidade da PESTEL é, ao mesmo tempo, sua maior força e seu maior risco. Por ser fácil de
+                    entender e aplicar, é comum que as análises acabem virando listas genéricas — frases soltas como
+                    "a tecnologia está avançando" ou "a economia pode mudar", que não dizem nada de específico sobre a
+                    organização em questão.</p>
+
+                <p>Para evitar essa armadilha, a análise precisa ser sempre conectada a um objeto concreto e a um
+                    horizonte de tempo definido — não "a tecnologia está mudando", mas "a adoção de determinada
+                    tecnologia pode afetar este setor específico nos próximos dois anos, pelos seguintes motivos".
+                    Outro cuidado importante é não tratar a PESTEL como um exercício isolado e pontual: como o
+                    ambiente externo está em constante transformação, a ferramenta funciona melhor como parte de um
+                    processo contínuo de monitoramento, e não como um relatório feito uma única vez e depois
+                    esquecido.</p>
+            </section>
+
+            <section class="unit-section" id="ponto-de-partida" aria-labelledby="ponto-de-partida-title">
+                <p class="section-eyebrow">08 · Tradição Metodológica</p>
+                <h2 id="ponto-de-partida-title">PESTEL como Ponto de Partida do Pensamento sobre Futuros</h2>
+
+                <p>Vale fechar esta unidade situando a PESTEL dentro do conjunto de ferramentas que este curso já
+                    apresentou. Ela funciona, na prática, como uma porta de entrada: ao mapear o ambiente externo de
+                    forma estruturada, a PESTEL frequentemente revela justamente os sinais fracos que aprendemos a
+                    captar na Unidade 2 — um fator tecnológico ainda incipiente na PESTEL pode ser exatamente o tipo
+                    de indício ambíguo que constitui um sinal fraco. Da mesma forma, os fatores identificados em uma
+                    PESTEL podem alimentar diretamente a construção de um PPF (Unidade 3) ou servir como ponto de
+                    partida para uma Roda do Futuro (Unidade 5), quando queremos explorar as consequências de uma
+                    mudança específica dentro de uma dessas seis dimensões.</p>
+            </section>
+
+            <section class="unit-section" id="exemplos-aplicados" aria-labelledby="exemplos-aplicados-title">
+                <p class="section-eyebrow">09 · Aplicações</p>
+                <h2 id="exemplos-aplicados-title">Exemplos Aplicados</h2>
+
+                <div class="case-list">
+                    <article class="case-card">
+                        <h3>Indústria automotiva</h3>
+                        <p>Uma montadora que planeja expandir sua produção para o Brasil pode ter seus planos
+                            completamente alterados por uma decisão política de retirada de subsídios a empresas
+                            estrangeiras — um exemplo clássico de como o fator Político pode travar, da noite para o
+                            dia, uma estratégia já em andamento.</p>
+                    </article>
+                    <article class="case-card">
+                        <h3>Varejo e consumo</h3>
+                        <p>Uma marca de moda pode identificar, na dimensão Social, a ascensão de uma nova geração de
+                            consumidores com diferentes valores de consumo (como maior interesse por sustentabilidade),
+                            o que a leva a repensar tanto seus produtos quanto sua comunicação.</p>
+                    </article>
+                    <article class="case-card">
+                        <h3>Tecnologia financeira</h3>
+                        <p>Uma fintech que lança um novo aplicativo de gestão financeira precisa considerar, na
+                            dimensão Legal, regulamentações como a LGPD (Lei Geral de Proteção de Dados), que impactam
+                            diretamente como a empresa pode coletar e armazenar informações financeiras de seus
+                            usuários.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="unit-section" id="caso-bets" aria-labelledby="caso-bets-title">
+                <p class="section-eyebrow">10 · Estudo de Caso</p>
+                <h2 id="caso-bets-title">Caso Real Aplicado: a Regulamentação das Apostas Esportivas (Bets) no Brasil
+                </h2>
+
+                <p>Poucos casos recentes no Brasil atravessam tantas dimensões da PESTEL ao mesmo tempo quanto a
+                    regulamentação do mercado de apostas esportivas — as chamadas "bets". Vamos analisar esse
+                    fenômeno dimensão por dimensão.</p>
+
+                <p><strong>Político:</strong> depois de anos operando em uma zona cinzenta, sem legislação
+                    específica, o setor de apostas esportivas de quota fixa foi regulamentado pela <strong>Lei nº
+                        14.790</strong>, sancionada no final de 2023 (Exame, 2025). A partir dela, o Ministério da
+                    Fazenda criou, em 2024, a Secretaria de Prêmios e Apostas (SPA-MF), responsável por publicar as
+                    regras concretas de funcionamento do setor (Jornal O Casarão, 2025).</p>
+
+                <p><strong>Econômico:</strong> o volume de dinheiro movimentado pelo setor é expressivo — estima-se
+                    que, somente em 2024, as casas de apostas movimentaram entre R$ 89 e R$ 129 bilhões no Brasil
+                    (Jornal O Casarão, 2025). A regulamentação trouxe também um novo regime de tributação para
+                    operadoras e apostadores, num esforço de equilibrar arrecadação, segurança jurídica e
+                    competitividade do setor (Migalhas, 2026).</p>
+
+                <p><strong>Social:</strong> o impacto social do fenômeno foi amplo e rápido: somente entre janeiro e
+                    julho de 2024, cerca de 25 milhões de pessoas começaram a apostar em plataformas esportivas online
+                    — uma média de 3,5 milhões de novos apostadores por mês (Migalhas, 2025). Esse crescimento
+                    acelerado levantou preocupações concretas sobre o orçamento das famílias brasileiras, o aumento do
+                    endividamento e riscos à saúde mental da população, especialmente entre grupos mais vulneráveis
+                    (Câmara dos Deputados, 2025).</p>
+
+                <p><strong>Tecnológico:</strong> todo o fenômeno depende diretamente da tecnologia — plataformas
+                    digitais acessíveis pelo celular, e, em alguns casos, o uso de criptomoedas como forma de
+                    pagamento, o que dificulta o rastreamento das movimentações financeiras dos usuários (Migalhas,
+                    2025).</p>
+
+                <p><strong>Legal:</strong> a regulamentação trouxe também disputas jurídicas relevantes. O Supremo
+                    Tribunal Federal (STF) foi provocado a avaliar a constitucionalidade de dispositivos da lei, em
+                    uma Ação Direta de Inconstitucionalidade movida pela Confederação Nacional do Comércio (Migalhas,
+                    2026). Em decisões cautelares, o STF determinou, por exemplo, que recursos de programas sociais
+                    (como o Bolsa Família) não pudessem ser usados para apostas, e reforçou restrições à publicidade
+                    do setor voltada a menores de idade e pessoas com diagnóstico de ludopatia (Control F5, 2026).</p>
+
+                <p><strong>Ambiental:</strong> neste caso específico, o fator ambiental praticamente não se aplica — e
+                    isso, como já discutido na seção 3, não é um problema da análise, mas um reflexo real de que nem
+                    todo fenômeno pesa igualmente em todas as seis dimensões da PESTEL.</p>
+
+                <blockquote>Esse caso mostra, de forma muito concreta, por que a PESTEL é mais poderosa quando usada
+                    para revelar conexões entre dimensões, e não apenas para preencher uma lista de fatores isolados:
+                    a decisão política de regular o setor gerou, quase simultaneamente, consequências econômicas
+                    bilionárias, uma onda de adesão social sem precedentes, desafios tecnológicos de rastreamento, e
+                    uma nova frente de disputas legais que ainda seguia em desenvolvimento nos tribunais.</blockquote>
+
+                <p class="reading-more">Saiba mais: <a href="https://resumocast.com.br/blog/analise-pestel"
+                        target="_blank" rel="noopener">Análise PESTEL: o que é, os 6 fatores e... (ResumoCast, 2026)</a>
+                    · <a href="https://jornalocasarao.uff.br/2025/01/29/a-regulacao-das-bets-no-brasil-e-o-impacto-na-economia-das-familias-brasileiras/"
+                        target="_blank" rel="noopener">A Regulação das BETs no Brasil e o impacto na economia das
+                        famílias brasileiras (Jornal O Casarão, UFF, 2025)</a> · <a
+                        href="https://pt.wikipedia.org/wiki/Lei_das_Bets" target="_blank" rel="noopener">Lei das Bets
+                        (Wikipédia)</a> · <a
+                        href="https://exame.com/brasil/o-que-muda-com-a-regulamentacao-das-apostas-esportivas-no-brasil-e-os-desafios-para-o-setor-em-2025/"
+                        target="_blank" rel="noopener">O que muda com a regulamentação das apostas esportivas no
+                        Brasil e os desafios para o setor em 2025 (Exame, 2025)</a></p>
+            </section>
+
+            <section class="unit-section unit-section--video" id="video-pestel" aria-labelledby="video-pestel-title">
+                <p class="section-eyebrow">11 · Vídeo</p>
+                <h2 id="video-pestel-title">Vídeo</h2>
+
+                <p><strong>"Análise Pestel: como usar + Template Gratuito"</strong>. Vídeo em português que explica de
+                    forma clara e prática o que é a Análise PESTEL, como ela ajuda a compreender o ambiente externo de
+                    um negócio, e como aplicá-la.</p>
+
+                <div class="video-embed" data-youtube-id="Sj3QNSr9_f4"
+                    aria-label="Player de vídeo: Análise Pestel: como usar + Template Gratuito">
+                    <button class="video-play" type="button" aria-label="Reproduzir vídeo">
+                        <span class="video-play-icon" aria-hidden="true">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </span>
+                        <span class="video-play-text">Reproduzir vídeo</span>
+                    </button>
+                    <p class="video-config-note">Análise Pestel: como usar + Template Gratuito</p>
+                </div>
+
+                <div class="activity-box">
+                    <h3>Atividade sugerida</h3>
+                    <p>Escolha uma organização real (a empresa onde você trabalha, um negócio da sua região ou um
+                        setor de seu interesse) e construa uma Análise PESTEL completa, levantando ao menos um fator
+                        relevante em cada uma das seis dimensões. Ao final, identifique quais dimensões pesam mais
+                        para esse caso específico e aponte pelo menos uma conexão entre fatores de dimensões
+                        diferentes.</p>
+                </div>
+
+                <p class="reading-more">Saiba mais: <a href="https://www.youtube.com/watch?v=Sj3QNSr9_f4"
+                        target="_blank" rel="noopener">Assistir no YouTube</a></p>
+            </section>
+
+            <section class="unit-section" id="referencias" aria-labelledby="referencias-title">
+                <p class="section-eyebrow">12 · Bibliografia</p>
+                <h2 id="referencias-title">Referências</h2>
+
+                <ul>
+                    <li>AGUILAR, Francis J. <em>Scanning the Business Environment</em>. New York: Macmillan, 1967.
+                    </li>
+                    <li>BSC DESIGNER. <em>Um exemplo de uso do modelo PESTEL</em>. 2025. <a
+                            href="https://bscdesigner.com/pt/pestel-analysis.htm" target="_blank"
+                            rel="noopener">Disponível aqui</a>.</li>
+                    <li>CÂMARA DOS DEPUTADOS. <em>Projeto de Lei nº [2025] — justificativa sobre impactos sociais e
+                            econômicos das apostas de quota fixa</em>. <a
+                            href="https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=2924070"
+                            target="_blank" rel="noopener">Disponível aqui</a>.</li>
+                    <li>CONTROL F5. <em>Impacto da Lei 14.790 no STF: O que Mudou na Regulamentação de Apostas em
+                            2026</em>. <a href="https://controlf5.com.br/lei-14790-stf-impactos-regulamentacao-apostas/"
+                            target="_blank" rel="noopener">Disponível aqui</a>.</li>
+                    <li>DESK MANAGER. <em>Análise Pestel: o que é, exemplos e como fazer</em>. 2024. <a
+                            href="https://www.deskmanager.com.br/blog/analise-pestel/" target="_blank"
+                            rel="noopener">Disponível aqui</a>.</li>
+                    <li>EXAME. <em>O que é a análise PESTEL e como usá-la para planejar um negócio?</em> 2025. <a
+                            href="https://exame.com/carreira/guia-de-carreira/o-que-e-a-analise-pestel-e-como-usa-la-para-planejar-um-negocio/"
+                            target="_blank" rel="noopener">Disponível aqui</a>.</li>
+                    <li>EXAME. <em>O que muda com a regulamentação das apostas esportivas no Brasil e os desafios para
+                            o setor em 2025</em>. 2025. <a
+                            href="https://exame.com/brasil/o-que-muda-com-a-regulamentacao-das-apostas-esportivas-no-brasil-e-os-desafios-para-o-setor-em-2025/"
+                            target="_blank" rel="noopener">Disponível aqui</a>.</li>
+                    <li>GLOBAL ADVISORS. <em>Strategy Tools - PEST / PESTLE / PESTEL</em>. 2026. <a
+                            href="https://globaladvisors.biz/2026/03/22/strategy-tools-pest-pestle-pestel/"
+                            target="_blank" rel="noopener">Disponível aqui</a>.</li>
+                    <li>JORNAL O CASARÃO (UFF). <em>A Regulação das BETs no Brasil e o impacto na economia das
+                            famílias brasileiras</em>. 2025. <a
+                            href="https://jornalocasarao.uff.br/2025/01/29/a-regulacao-das-bets-no-brasil-e-o-impacto-na-economia-das-familias-brasileiras/"
+                            target="_blank" rel="noopener">Disponível aqui</a>.</li>
+                    <li>MEREO. <em>Análise PESTEL: o que é, como fazer e exemplos práticos</em>. 2026. <a
+                            href="https://mereo.com/hub/analise-pestel/" target="_blank" rel="noopener">Disponível
+                            aqui</a>.</li>
+                    <li>MIGALHAS. <em>Impactos socioeconômicos da lei 14.790/23, sobre apostas de quota fixa</em>.
+                        2025. <a
+                            href="https://www.migalhas.com.br/coluna/informacao-privilegiada/440594/impactos-socioeconomicos-da-lei-14-790-23-sobre-apostas-de-quota-fixa"
+                            target="_blank" rel="noopener">Disponível aqui</a>.</li>
+                    <li>MIGALHAS. <em>Tributar para regular: Limites do modelo fiscal das 'bets' no Brasil</em>. 2026.
+                        <a href="https://www.migalhas.com.br/depeso/459314/tributar-para-regular-limites-do-modelo-fiscal-das-bets-no-brasil"
+                            target="_blank" rel="noopener">Disponível aqui</a>.
+                    </li>
+                    <li>PESTLE ANALYSIS. <em>Who Invented PEST Analysis And Why It Matters</em>. 2024. <a
+                            href="https://pestleanalysis.com/who-invented-pest-analysis/" target="_blank"
+                            rel="noopener">Disponível aqui</a>.</li>
+                    <li>RAPIDBI. <em>History of PEST analysis</em>. <a
+                            href="https://rapidbi.com/history-of-pest-analysis/" target="_blank"
+                            rel="noopener">Disponível aqui</a>.</li>
+                    <li>RESUMOCAST. <em>Análise PESTEL: o que é, os 6 fatores e...</em> 2026. <a
+                            href="https://resumocast.com.br/blog/analise-pestel" target="_blank"
+                            rel="noopener">Disponível aqui</a>.</li>
+                    <li>WIKIPÉDIA. <em>Lei das Bets</em>. <a href="https://pt.wikipedia.org/wiki/Lei_das_Bets"
+                            target="_blank" rel="noopener">Disponível aqui</a>.</li>
+                    <li>WIKIPÉDIA (inglês). <em>Francis J. Aguilar</em>. <a
+                            href="https://en.wikipedia.org/wiki/Francis_J._Aguilar" target="_blank"
+                            rel="noopener">Disponível aqui</a>.</li>
+                </ul>
+            </section>
+
+            <footer class="unit-footer">
+                <p>Unidade 4: Análise PESTEL · Curso de Administração · Material de apoio para uso em disciplina EAD.
+                </p>
+            </footer>
+
+        </main>
+    </div>
+
+    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 15l-6-6-6 6" />
+        </svg>
+    </button>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
