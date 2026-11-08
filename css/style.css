@@ -667,6 +667,118 @@ blockquote p:last-child {
   width: 5.5rem;
 }
 
+/* ---------- Shift table (De -> Para) ---------- */
+.shift-table-wrap {
+  margin: 0 0 1.3rem;
+  overflow-x: auto;
+}
+
+.shift-table-topic {
+  font-family: var(--font-sans);
+  font-size: calc(0.78rem * var(--content-scale, 1));
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+  margin: 0 0 0.6rem;
+}
+
+.shift-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: calc(0.92rem * var(--content-scale, 1));
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.shift-table th {
+  font-family: var(--font-sans);
+  font-size: calc(0.76rem * var(--content-scale, 1));
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 0.65rem 0.9rem;
+  background: var(--color-bg-elevated);
+  color: var(--color-text-faint);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.shift-table th:last-child {
+  color: var(--color-accent);
+  background: var(--color-accent-soft);
+}
+
+.shift-table td {
+  padding: 0.65rem 0.9rem;
+  border-top: 1px solid var(--color-border);
+  vertical-align: top;
+  color: var(--color-text-muted);
+}
+
+.shift-table tbody tr:first-child td {
+  border-top: none;
+}
+
+.shift-table td:last-child {
+  color: var(--color-text);
+  font-weight: 500;
+  border-left: 1px solid var(--color-border);
+}
+
+.shift-table td.is-blank {
+  color: var(--color-text-faint);
+  font-style: italic;
+}
+
+.shift-table--example td:first-child {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  white-space: nowrap;
+  width: 2.4rem;
+  text-align: center;
+}
+
+/* ---------- Generic data table ---------- */
+.data-table-wrap {
+  margin: 0 0 1.3rem;
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: calc(0.9rem * var(--content-scale, 1));
+}
+
+.data-table th {
+  font-family: var(--font-sans);
+  font-size: calc(0.76rem * var(--content-scale, 1));
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 0.6rem 0.8rem;
+  color: var(--color-text-faint);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.data-table td {
+  padding: 0.65rem 0.8rem;
+  border-top: 1px solid var(--color-border);
+  vertical-align: top;
+  color: var(--color-text-muted);
+}
+
+.data-table tbody tr:first-child td {
+  border-top: none;
+}
+
+.data-table strong {
+  color: var(--color-text);
+}
+
 /* ---------- Futures cone diagram ---------- */
 .cone-diagram {
   margin: 1.6rem 0;
